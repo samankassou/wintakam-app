@@ -1,0 +1,576 @@
+@import "base";
+@import "fonts";
+
+body {
+    font-family: "Acumin Pro", sans-serif;
+}
+
+.toggler {
+    background-color: transparent;
+    cursor: pointer;
+    margin-left: 1rem;
+
+    @media screen and (min-width: 540px) {
+        margin-left: 1.5rem;
+    }
+
+    @media screen and (min-width: 768px) {
+        display: none;
+    }
+
+    span {
+        display: block;
+        width: 1.4rem;
+        height: 2px;
+        margin-top: 4px;
+        background-color: #fff;
+        transition: 0.5s;
+
+        &:nth-child(1) {
+            margin-top: 0;
+        }
+    }
+
+    &.active {
+        span {
+            &:nth-child(1) {
+                transform: rotate(-45deg) translateX(-9px);
+            }
+
+            &:nth-child(2) {
+                opacity: 0;
+            }
+
+            &:nth-child(3) {
+                transform: rotate(45deg) translateX(-9px);
+            }
+        }
+    }
+}
+
+.menu {
+    display: none;
+
+    &__item {
+        text-decoration: none;
+        color: #fff;
+
+        &--btn {
+            padding: 0.7rem;
+            background-color: #ffa300;
+            font-size: 1.2rem;
+        }
+
+        @media screen and (min-width: 540px) {
+            font-size: 1.5rem;
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+        display: inline-flex;
+        align-items: center;
+        column-gap: 1.3rem;
+        margin-left: auto;
+        margin-right: 1.5rem;
+    }
+
+    @media screen and (min-width: 540px) {
+        column-gap: 1.5rem;
+    }
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #002042;
+    height: 6rem;
+    position: fixed;
+    width: 100%;
+    max-width: 1280px;
+    z-index: 200;
+
+    &__user-icon {
+        color: #fff;
+        font-size: 1.5rem;
+        margin-right: 1rem;
+
+        @media screen and (min-width: 540px) {
+            margin-right: 1.5rem;
+            font-size: 2rem;
+        }
+
+        @media screen and (min-width: 768px) {
+            display: none;
+        }
+    }
+}
+
+.logo {
+    img {
+        height: 3rem;
+
+        @media screen and (min-width: 540px) {
+            height: 4rem;
+        }
+    }
+}
+
+.content {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../images/home-bg.jpg");
+    background-position: center center;
+    background-size: cover;
+    min-height: calc(100vh - 6rem);
+    background-attachment: fixed;
+}
+
+.header {
+    padding: 2rem 1rem;
+    padding-top: 6rem;
+
+    &__description {
+        color: #fff;
+        text-align: center;
+        margin: 1rem 0;
+        font-size: 1.6rem;
+        text-shadow: 1px 1px 2px black;
+
+        @media screen and (min-width: 540px) {
+            font-size: 1.7rem;
+        }
+
+        @media screen and (min-width: 768px) {
+            margin: 2rem 0;
+            padding-left: 2rem;
+            padding-rigth: 2rem;
+        }
+    }
+
+    &__form {
+        margin-top: 2rem;
+        position: relative;
+        background-color: #c9e0f8;
+        position: relative;
+
+        @media screen and (min-width: 540px) {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        @media screen and (min-width: 992px) {
+            width: 50%;
+        }
+
+        &-icon {
+            position: absolute;
+            left: 1rem;
+            top: 1rem;
+            color: #002042;
+
+            @media screen and (min-width: 540px) {
+                top: 1.3rem;
+                font-size: 1.2rem;
+            }
+        }
+
+        input {
+            font-size: 1rem;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            padding-left: 2.5rem;
+            width: 100%;
+
+            &:focus {
+                outline: #002042 solid 1px;
+            }
+
+            @media screen and (min-width: 540px) {
+                font-size: 1.5rem;
+            }
+        }
+
+        button {
+            position: absolute;
+            right: 0;
+            padding: 1rem;
+            background-color: #002042;
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 300ms ease-in-out;
+
+            &:hover {
+                background-color: rgba($color: #002042, $alpha: 0.3);
+            }
+
+            @media screen and (min-width: 540px) {
+                font-size: 1.5rem;
+            }
+        }
+    }
+}
+
+.menu-mobile {
+    position: fixed;
+    overflow: scroll;
+    top: 6rem;
+    left: 0;
+    background-color: #002042;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    height: calc(100vh - 6rem);
+    z-index: 200;
+    width: 0;
+    transition: width 0.5s ease-in-out;
+
+    &__item {
+        text-decoration: none;
+        color: #fff;
+        display: none;
+        opacity: 0;
+        transition: opacity 0.3s;
+
+        @media screen and (min-width: 540px) {
+            font-size: 1.2rem;
+        }
+
+        &--btn {
+            padding: 1rem 2rem;
+            background-color: #ffa300;
+            font-size: 1.5rem;
+        }
+    }
+
+    &.active {
+        width: 100%;
+
+        a {
+            opacity: 1;
+            display: flex;
+        }
+    }
+}
+
+.section {
+    background-color: #e2e2e2;
+    margin-top: 3rem;
+
+    &--no-mt {
+        margin-top: 0;
+    }
+
+    &__heading {
+        color: #002042;
+        font-weight: 700;
+        font-size: 1.5rem;
+        padding-top: 2rem;
+        margin-bottom: 1.5rem;
+        text-transform: uppercase;
+        text-align: center;
+        position: relative;
+
+        @media screen and (min-width: 540px) {
+            font-size: 2rem;
+        }
+    }
+}
+
+.articles-container {
+    @media (min-width: 992px) {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1%;
+    }
+
+    &__load-more-btn {
+        display: block;
+        width: 9rem;
+        margin: 1rem auto;
+        margin-bottom: 0;
+        padding: 0.5rem 1rem;
+        background-color: #002042;
+        color: #fff;
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+}
+
+.latest-posts {
+    padding-bottom: 2rem;
+}
+
+.article {
+    background-color: #fff;
+    padding-bottom: 2rem;
+    display: block;
+    position: relative;
+
+    @media (min-width: 768px) {
+        padding-bottom: 0;
+        margin-bottom: 2rem;
+        display: flex;
+        flex-wrap: wrap;
+        box-shadow: -1px 3px 10px -10px rgba(0, 0, 0, 0.75);
+        -webkit-box-shadow: -1px 3px 10px -10px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: -1px 3px 10px -10px rgba(0, 0, 0, 0.75);
+    }
+
+    @media (min-width: 992px) {
+        width: 49.5%;
+        margin-bottom: 1rem;
+    }
+
+    img {
+        width: 100%;
+
+        @media (min-width: 768px) {
+            height: 100%;
+        }
+    }
+
+    &__image-box {
+        position: relative;
+
+        @media (min-width: 768px) {
+            width: 40%;
+        }
+    }
+
+    &__price {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        padding: 8px;
+        background-color: rgba($color: #002042, $alpha: 0.3);
+        color: #fff;
+        font-weight: 700;
+        font-size: 1.7rem;
+
+        @media screen and (min-width: 540px) {
+            font-size: 2rem;
+        }
+
+        @media (min-width: 992px) {
+            font-size: 1.4rem;
+        }
+    }
+
+    &__info {
+        @media (min-width: 768px) {
+            width: 60%;
+        }
+
+        h2 {
+            font-weight: 700;
+
+            @media screen and (min-width: 540px) {
+                font-size: 2rem;
+            }
+
+            @media (min-width: 992px) {
+                font-size: 1.5rem;
+            }
+        }
+
+        p {
+            font-size: 1.3rem;
+            line-height: 1.5rem;
+            color: #7c7a7a;
+            text-align: justify;
+            padding: 0.5rem 1rem 0;
+
+            @media screen and (min-width: 540px) {
+                padding: 0.5rem 1.5rem 0;
+                font-size: 1.5rem;
+            }
+
+            @media (min-width: 992px) {
+                padding: 0.3rem 1.2rem 0;
+                font-size: 1.2rem;
+            }
+        }
+    }
+
+    &__heading {
+        display: flex;
+        justify-content: space-between;
+        margin: 1rem auto 0;
+        padding: 0 1rem;
+        align-items: center;
+        font-size: 1.6rem;
+
+        @media screen and (min-width: 540px) {
+            margin: 1.5rem auto 0;
+            padding: 0 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        @media (min-width: 992px) {
+            margin: 1rem auto 0;
+            padding: 0 1rem;
+            font-size: 1.5rem;
+        }
+    }
+
+    &__bookmark-icon {
+        color: #7c7a7a;
+    }
+
+    &__stars {
+        margin: 1rem;
+        color: #ffa300;
+
+        @media screen and (min-width: 540px) {
+            margin: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        @media (min-width: 992px) {
+            margin: 1rem;
+            font-size: 1rem;
+        }
+    }
+
+    &__meta {
+        font-size: 1rem;
+        margin-top: 1rem;
+        padding: 0 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.7rem;
+        color: #9c9a9a;
+
+        @media screen and (min-width: 540px) {
+            margin-top: 1.5rem;
+            padding: 0 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            font-size: 1.3rem;
+            padding-bottom: 1rem;
+        }
+
+        @media (min-width: 992px) {
+            font-size: 1rem;
+            margin-top: 1rem;
+            padding: 0 1rem;
+            padding-bottom: 0.7rem;
+        }
+
+        span {
+            display: inline-block;
+            margin-left: 1rem;
+        }
+    }
+
+    &__btn {
+        text-decoration: none;
+        padding: 1rem 2rem;
+        background-image: linear-gradient(#002042, #5492d3);
+        color: #fff;
+        display: block;
+        width: 70%;
+        margin: 1.5rem auto 0;
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 1.3rem;
+
+        @media screen and (min-width: 540px) {
+            width: 50%;
+        }
+
+        @media (min-width: 768px) {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 8rem;
+            margin: 0;
+            padding: 1rem;
+            font-size: 1rem;
+            border-top-left-radius: 1.5rem;
+            border-bottom-left-radius: 1.5rem;
+        }
+
+        @media screen and (min-width: 992px) {
+            padding: 0.5rem 0.7rem;
+            font-size: 0.7rem;
+        }
+    }
+}
+
+.cities__container {
+    @media screen and (min-width: 768px) {
+        display: flex;
+        align-items: stretch;
+        flex-wrap: wrap;
+        gap: 1%;
+    }
+
+    @media screen and (min-width: 992px) {
+        gap: 0.83%;
+    }
+}
+
+.city {
+    width: 80%;
+    margin: 1rem auto;
+    display: block;
+
+    @media screen and (min-width: 540px) {
+        width: 90%;
+    }
+
+    @media screen and (min-width: 768px) {
+        width: 49.5%;
+    }
+
+    @media screen and (min-width: 992px) {
+        width: 32.5%;
+    }
+
+    &__image {
+        width: 100%;
+
+        @media screen and (min-width: 768px) {
+            height: 100%;
+        }
+    }
+
+    &__link {
+        display: block;
+        position: relative;
+        height: 100%;
+    }
+
+    &__name {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        font-weight: 700;
+        font-size: 1.4rem;
+        border-radius: 1rem;
+        padding: 0.5rem;
+        background-color: rgba($color: #000000, $alpha: 0.3);
+    }
+}
+
+.footer {
+    background-color: #002042;
+    min-height: 5rem;
+    display: flex;
+    align-items: flex-end;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+
+    &__copy {
+        color: #fff;
+        font-weight: bold;
+    }
+}
