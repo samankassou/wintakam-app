@@ -13,6 +13,9 @@
         <!-- Favicon -->
 		<link rel="shortcut icon" href="{{ url(asset('favicon.ico')) }}">
 
+        <!-- Fonts -->
+        @googlefonts('Poppins')
+
         <!-- Styles -->
         <link rel="stylesheet" href="{{ url(mix('css/app.css')) }}">
         @livewireStyles
@@ -22,8 +25,6 @@
 
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
-
-         @googlefonts('Poppins')
 
         @stack('styles')
     </head>
