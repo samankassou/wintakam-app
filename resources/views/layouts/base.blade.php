@@ -13,9 +13,6 @@
         <!-- Favicon -->
 		<link rel="shortcut icon" href="{{ url(asset('favicon.ico')) }}">
 
-        <!-- Fonts -->
-        @googlefonts('Poppins')
-
         <!-- Styles -->
         <link rel="stylesheet" href="{{ url(mix('css/app.css')) }}">
         @livewireStyles
