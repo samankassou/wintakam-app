@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@push('styles')
+    <script src="{{ asset('front_office/css/home.css') }}"></script>
+@endpush
+
 @section('content')
     <div class="flex flex-col justify-center min-h-screen py-12 bg-gray-50 sm:px-6 lg:px-8">
         <div class="absolute top-0 right-0 mt-4 mr-4">
@@ -32,7 +36,7 @@
             <div class="flex flex-col justify-around">
                 <div class="space-y-6">
                     <a href="{{ route('home') }}">
-                        <x-logo class="w-auto h-16 mx-auto text-first-light" />
+                        <x-logo class="w-auto h-16 mx-auto text-first" />
                     </a>
 
                     <h1 class="text-5xl font-extrabold tracking-wider text-center text-gray-600">

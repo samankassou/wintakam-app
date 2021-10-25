@@ -4,10 +4,12 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+                sans: ['Acumin Pro', ...defaultTheme.fontFamily.sans],
             },
             colors: {
-                'firt': '#002042'
+                first: {
+                    DEFAULT: '#002042'
+                }
             }
         },
     },

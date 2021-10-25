@@ -11,10 +11,7 @@
         @endif
 
         <!-- Favicon -->
-		<link rel="shortcut icon" href="{{ url(asset('front_office/favicon.ico')) }}">
-
-        <!-- Fonts -->
-        <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+		<link rel="shortcut icon" href="{{ url(asset('favicon.ico')) }}">
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ url(mix('css/app.css')) }}">
@@ -25,11 +22,16 @@
 
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
+
+         @googlefonts('Poppins')
+
+        @stack('styles')
     </head>
 
     <body>
         @yield('body')
 
         @livewireScripts
+        @stack('scripts')
     </body>
 </html>
