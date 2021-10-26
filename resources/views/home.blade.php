@@ -118,8 +118,8 @@
     <main class="bg-gray-50 w-full">
         <section class="max-w-6xl mx-auto px-4">
             <h2 class="py-5 sm:py-6 md:py-7 lg:py-8 text-center font-bold text-2xl xs:text-3xl md:text-4xl text-green-500">Dernières annonces</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-3 justify-items-center">
-                <article class="max-w-sm md:max-w-none c-card block md:flex bg-white shadow-md hover:shadow-xl rounded-lg md:rounded-none overflow-hidden">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-3 justify-items-center">
+                <article class="max-w-sm md:max-w-none c-card md:flex bg-white shadow-md hover:shadow-xl rounded-lg md:rounded-none overflow-hidden">
                     <div class="relative pb-48 overflow-hidden md:w-full">
                         <img class="absolute inset-0 h-full w-full object-cover" src="{{ asset('front_office/images/house-2.jpg') }}" alt="house">
                     </div>
@@ -180,7 +180,7 @@
                         </div>
                     </div>
                 </article>
-                <article class="max-w-sm md:max-w-none c-card block md:flex bg-white shadow-md hover:shadow-xl rounded-lg md:rounded-none overflow-hidden">
+                <article class="max-w-sm md:max-w-none c-card md:flex bg-white shadow-md hover:shadow-xl rounded-lg md:rounded-none overflow-hidden">
                     <div class="relative pb-48 overflow-hidden md:w-full">
                         <img class="absolute inset-0 h-full w-full object-cover" src="{{ asset('front_office/images/house-3.jpeg') }}" alt="house">
                     </div>
@@ -241,7 +241,7 @@
                         </div>
                     </div>
                 </article>
-                <article class="max-w-sm md:max-w-none c-card block md:flex bg-white shadow-md hover:shadow-xl rounded-lg md:rounded-none overflow-hidden">
+                <article class="max-w-sm md:max-w-none c-card md:flex bg-white shadow-md hover:shadow-xl rounded-lg md:rounded-none overflow-hidden">
                     <div class="relative pb-48 overflow-hidden md:w-full">
                         <img class="absolute inset-0 h-full w-full object-cover" src="{{ asset('front_office/images/house-4.jpeg') }}" alt="house">
                     </div>
@@ -302,7 +302,7 @@
                         </div>
                     </div>
                 </article>
-                <article class="max-w-sm md:max-w-none c-card block md:flex bg-white shadow-md hover:shadow-xl rounded-lg md:rounded-none overflow-hidden">
+                <article class="max-w-sm md:max-w-none c-card md:flex bg-white shadow-md hover:shadow-xl rounded-lg md:rounded-none overflow-hidden">
                     <div class="relative pb-48 overflow-hidden md:w-full">
                         <img class="absolute inset-0 h-full w-full object-cover" src="{{ asset('front_office/images/house-5.jpeg') }}" alt="house">
                     </div>
@@ -363,7 +363,7 @@
                         </div>
                     </div>
                 </article>
-                <article class="max-w-sm md:max-w-none c-card block md:flex bg-white shadow-md hover:shadow-xl rounded-lg md:rounded-none overflow-hidden">
+                <article class="max-w-sm md:max-w-none c-card md:flex bg-white shadow-md hover:shadow-xl rounded-lg md:rounded-none overflow-hidden">
                     <div class="relative pb-48 overflow-hidden md:w-full">
                         <img class="absolute inset-0 h-full w-full object-cover" src="{{ asset('front_office/images/house-1.jpg') }}" alt="house">
                     </div>
@@ -423,6 +423,35 @@
                             Plus de détails
                         </div>
                     </div>
+                </article>
+            </div>
+        </section>
+        <section class="max-w-6xl mx-auto px-4">
+            <h2 class="py-5 sm:py-6 md:py-7 lg:py-8 text-center font-bold text-2xl xs:text-3xl md:text-4xl text-green-500">Annonces publiées dans vos villes</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-3 justify-items-center">
+                <article class="c-card relative w-full h-60 max-w-sm shadow-md hover:shadow-lg overflow-hidden">
+                    <img class="absolute inset-0 h-full w-full object-cover" src="{{ asset('front_office/images/buea.jpg') }}" alt="city">
+                    <p class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-gray-50 font-semibold bg-gray-800 p-2 rounded bg-opacity-30">Buea</p>
+                </article>
+                <article class="c-card relative w-full h-60 max-w-sm shadow-md hover:shadow-lg overflow-hidden">
+                    <img class="absolute inset-0 h-full w-full object-cover" src="{{ asset('front_office/images/Douala.jpg') }}" alt="city">
+                    <p class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-gray-50 font-semibold bg-gray-800 p-2 rounded bg-opacity-30">Douala</p>
+                </article>
+                <article class="c-card relative w-full h-60 max-w-sm shadow-md hover:shadow-lg overflow-hidden">
+                    <img class="absolute inset-0 h-full w-full object-cover" src="{{ asset('front_office/images/maroua.jpg') }}" alt="city">
+                    <p class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-gray-50 font-semibold bg-gray-800 p-2 rounded bg-opacity-30">Maroua</p>
+                </article>
+                <article class="c-card relative w-full h-60 max-w-sm shadow-md hover:shadow-lg overflow-hidden">
+                    <img class="absolute inset-0 h-full w-full object-cover" src="{{ asset('front_office/images/Gra.jpg') }}" alt="city">
+                    <p class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-gray-50 font-semibold bg-gray-800 p-2 rounded bg-opacity-30">Garoua</p>
+                </article>
+                <article class="c-card relative w-full h-60 max-w-sm shadow-md hover:shadow-lg overflow-hidden">
+                    <img class="absolute inset-0 h-full w-full object-cover" src="{{ asset('front_office/images/yaounde.jpg') }}" alt="city">
+                    <p class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-gray-50 font-semibold bg-gray-800 p-2 rounded bg-opacity-30">Yaounde</p>
+                </article>
+                <article class="c-card relative w-full h-60 max-w-sm shadow-md hover:shadow-lg overflow-hidden">
+                    <img class="absolute inset-0 h-full w-full object-cover" src="{{ asset('front_office/images/bafoussam.jpg') }}" alt="city">
+                    <p class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-gray-50 font-semibold bg-gray-800 p-2 rounded bg-opacity-30">Bafoussam</p>
                 </article>
             </div>
         </section>
