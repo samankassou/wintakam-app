@@ -425,8 +425,9 @@
                     </div>
                 </article>
             </div>
+            <a href="#" class="block mt-3 sm:mt-5 md:mt-8 w-40 mx-auto text-sm text-center hover:text-green-500 border-green-500 border hover:bg-gray-50 transition-colors text-gray-50 bg-green-500 py-2 px-3 font-semibold">Voir Plus...</a>
         </section>
-        <section class="max-w-6xl mx-auto px-4">
+        <section class="max-w-6xl mx-auto px-4 mt-5">
             <h2 class="py-5 sm:py-6 md:py-7 lg:py-8 text-center font-bold text-2xl xs:text-3xl md:text-4xl text-green-500">Annonces publiées dans vos villes</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-3 justify-items-center">
                 <article class="c-card relative w-full h-60 max-w-sm shadow-md hover:shadow-lg overflow-hidden">
