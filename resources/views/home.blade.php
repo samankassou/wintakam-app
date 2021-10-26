@@ -60,10 +60,10 @@
                         <div class="hidden md:flex items-center space-x-3 ">
                             <!-- Primary Navbar items -->
                             <div class="hidden md:flex items-center space-x-1">
-                                <a href="" class="py-4 px-2 text-green-400 border-b-4 border-green-500 font-semibold ">Accueil</a>
-                                <a href="" class="py-4 px-2 text-gray-100 font-semibold border-transparent hover:text-green-400 border-b-4 hover:border-green-500 transition duration-300">S'inscrire</a>
-                                <a href="" class="py-4 px-2 text-gray-100 font-semibold border-transparent hover:text-green-400 border-b-4 hover:border-green-500 transition duration-300">Se connecter</a>
-                                <a href="" class="py-4 px-2 text-gray-100 font-semibold border-transparent hover:text-green-400 border-b-4 hover:border-green-500 transition duration-300">Aide</a>
+                                <a href="#" class="py-4 px-2 text-green-400 border-b-4 border-green-500 font-semibold ">Accueil</a>
+                                <a href="#" class="py-4 px-2 text-gray-100 font-semibold border-transparent hover:text-green-400 border-b-4 hover:border-green-500 transition duration-300">Les annonces</a>
+                                <a href="#" class="py-4 px-2 text-gray-100 font-semibold border-transparent hover:text-green-400 border-b-4 hover:border-green-500 transition duration-300">S'inscrire</a>
+                                <a href="#" class="py-4 px-2 text-gray-100 font-semibold border-transparent hover:text-green-400 border-b-4 hover:border-green-500 transition duration-300">Se connecter</a>
                             </div>
 
                             <a href="" class="py-2 px-2 font-medium text-white bg-green-500 hover:bg-green-300 transition duration-300">Publier une annonce</a>
@@ -81,11 +81,12 @@
                 <div class="mobile-menu" x-show="showMenu" x-transition>
                     <ul class="">
                         <li class="active"><a href="#" class="block text-sm px-2 py-4 text-white bg-green-500 font-semibold">Accueil</a></li>
-                        <li><a href="#services" class="block text-sm px-2 py-4 text-white hover:bg-green-500 transition duration-300">S'inscrire</a></li>
-                        <li><a href="#about" class="block text-sm px-2 py-4 text-white hover:bg-green-500 transition duration-300">Se connecter</a></li>
-                        <li><a href="#contact" class="block text-sm px-2 py-4 text-white hover:bg-green-500 transition duration-300">Aide</a></li>
+                        <li><a href="#" class="block text-sm px-2 py-4 text-white hover:bg-green-500 transition duration-300">Les annonces</a></li>
+                        <li><a href="#" class="block text-sm px-2 py-4 text-white hover:bg-green-500 transition duration-300">S'inscrire</a></li>
+                        <li><a href="#" class="block text-sm px-2 py-4 text-white hover:bg-green-500 transition duration-300">Se connecter</a></li>
+                        <li><a href="#" class="block text-sm px-2 py-4 text-white hover:bg-green-500 transition duration-300">Aide</a></li>
                         <li>
-                            <a href="" class="block py-2 px-2 font-medium text-white hover:bg-green-300 transition duration-300">Publier une annonce</a>
+                            <a href="#" class="block py-2 px-2 font-medium text-white hover:bg-green-300 transition duration-300">Publier une annonce</a>
                         </li>
                     </ul>
                 </div>
@@ -432,7 +433,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-3 justify-items-center">
                 <article class="c-card relative w-full h-60 max-w-sm shadow-md hover:shadow-lg overflow-hidden">
                     <img class="absolute inset-0 h-full w-full object-cover" src="{{ asset('front_office/images/buea.jpg') }}" alt="city">
-                    <p class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-gray-50 font-semibold bg-gray-800 p-2 rounded bg-opacity-30">Buea</p>
+                    <p class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-gray-50 font-semibold bg-gray-800 p-2 rounded bg-opacity-30">Buéa</p>
                 </article>
                 <article class="c-card relative w-full h-60 max-w-sm shadow-md hover:shadow-lg overflow-hidden">
                     <img class="absolute inset-0 h-full w-full object-cover" src="{{ asset('front_office/images/Douala.jpg') }}" alt="city">
@@ -448,7 +449,7 @@
                 </article>
                 <article class="c-card relative w-full h-60 max-w-sm shadow-md hover:shadow-lg overflow-hidden">
                     <img class="absolute inset-0 h-full w-full object-cover" src="{{ asset('front_office/images/yaounde.jpg') }}" alt="city">
-                    <p class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-gray-50 font-semibold bg-gray-800 p-2 rounded bg-opacity-30">Yaounde</p>
+                    <p class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-gray-50 font-semibold bg-gray-800 p-2 rounded bg-opacity-30">Yaoundé</p>
                 </article>
                 <article class="c-card relative w-full h-60 max-w-sm shadow-md hover:shadow-lg overflow-hidden">
                     <img class="absolute inset-0 h-full w-full object-cover" src="{{ asset('front_office/images/bafoussam.jpg') }}" alt="city">
