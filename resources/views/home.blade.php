@@ -80,10 +80,13 @@
                 <!-- mobile menu -->
                 <div class="mobile-menu" x-show="showMenu" x-transition>
                     <ul class="">
-                        <li class="active"><a href="index.html" class="block text-sm px-2 py-4 text-white bg-first font-semibold">Home</a></li>
-                        <li><a href="#services" class="block text-sm px-2 py-4 text-white hover:bg-green-500 transition duration-300">Services</a></li>
-                        <li><a href="#about" class="block text-sm px-2 py-4 text-white hover:bg-green-500 transition duration-300">About</a></li>
-                        <li><a href="#contact" class="block text-sm px-2 py-4 text-white hover:bg-green-500 transition duration-300">Contact Us</a></li>
+                        <li class="active"><a href="#" class="block text-sm px-2 py-4 text-white bg-green-500 font-semibold">Accueil</a></li>
+                        <li><a href="#services" class="block text-sm px-2 py-4 text-white hover:bg-green-500 transition duration-300">S'inscrire</a></li>
+                        <li><a href="#about" class="block text-sm px-2 py-4 text-white hover:bg-green-500 transition duration-300">Se connecter</a></li>
+                        <li><a href="#contact" class="block text-sm px-2 py-4 text-white hover:bg-green-500 transition duration-300">Aide</a></li>
+                        <li>
+                            <a href="" class="block py-2 px-2 font-medium text-white hover:bg-green-300 transition duration-300">Publier une annonce</a>
+                        </li>
                     </ul>
                 </div>
 		    </nav>
@@ -149,7 +152,7 @@
                             laborum pariatur sunt repellat neque itaque reiciendis totam nihil fugit quidem! Porr...
                         </p>
                         <p class="mt-2 font-bold text-xl mb-3">
-                            200 000 <span class="text-sm font-semibold">FCFA/mois</span>
+                            700 000 <span class="text-sm font-semibold">FCFA/mois</span>
                         </p>
                         <div class="py-4 border-t border-b text-xs text-gray-700">
                             <p class="flex items-center gap-1 mb-2">
@@ -183,7 +186,7 @@
                     </div>
                     <div class="p-4">
                         <h2 class="font-bold md:text-xl my-2 flex justify-between items-center">
-                            Maloum Appartement
+                            Résidence le CARAT
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
                             </svg>
@@ -210,7 +213,7 @@
                             laborum pariatur sunt repellat neque itaque reiciendis totam nihil fugit quidem! Porr...
                         </p>
                         <p class="mt-2 font-bold text-xl mb-3">
-                            200 000 <span class="text-sm font-semibold">FCFA/mois</span>
+                            850 000 <span class="text-sm font-semibold">FCFA/mois</span>
                         </p>
                         <div class="py-4 border-t border-b text-xs text-gray-700">
                             <p class="flex items-center gap-1 mb-2">
@@ -244,7 +247,7 @@
                     </div>
                     <div class="p-4">
                         <h2 class="font-bold md:text-xl my-2 flex justify-between items-center">
-                            Maloum Appartement
+                            Villa John Doe
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
                             </svg>
@@ -271,7 +274,7 @@
                             laborum pariatur sunt repellat neque itaque reiciendis totam nihil fugit quidem! Porr...
                         </p>
                         <p class="mt-2 font-bold text-xl mb-3">
-                            200 000 <span class="text-sm font-semibold">FCFA/mois</span>
+                            620 000 <span class="text-sm font-semibold">FCFA/mois</span>
                         </p>
                         <div class="py-4 border-t border-b text-xs text-gray-700">
                             <p class="flex items-center gap-1 mb-2">
@@ -305,7 +308,7 @@
                     </div>
                     <div class="p-4">
                         <h2 class="font-bold md:text-xl my-2 flex justify-between items-center">
-                            Maloum Appartement
+                            Villa Senghor de Valdo
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
                             </svg>
@@ -332,7 +335,7 @@
                             laborum pariatur sunt repellat neque itaque reiciendis totam nihil fugit quidem! Porr...
                         </p>
                         <p class="mt-2 font-bold text-xl mb-3">
-                            200 000 <span class="text-sm font-semibold">FCFA/mois</span>
+                            410 000 <span class="text-sm font-semibold">FCFA/mois</span>
                         </p>
                         <div class="py-4 border-t border-b text-xs text-gray-700">
                             <p class="flex items-center gap-1 mb-2">
@@ -366,7 +369,7 @@
                     </div>
                     <div class="p-4">
                         <h2 class="font-bold md:text-xl my-2 flex justify-between items-center">
-                            Maloum Appartement
+                            Cité Salvator
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
                             </svg>
@@ -393,7 +396,7 @@
                             laborum pariatur sunt repellat neque itaque reiciendis totam nihil fugit quidem! Porr...
                         </p>
                         <p class="mt-2 font-bold text-xl mb-3">
-                            200 000 <span class="text-sm font-semibold">FCFA/mois</span>
+                            50 000 <span class="text-sm font-semibold">FCFA/mois</span>
                         </p>
                         <div class="py-4 border-t border-b text-xs text-gray-700">
                             <p class="flex items-center gap-1 mb-2">
