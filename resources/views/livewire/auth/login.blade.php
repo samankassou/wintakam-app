@@ -6,7 +6,7 @@
             <x-logo class="w-auto h-16 mx-auto text-green-500" />
         </a>
 
-        <h2 class="mt-6 text-3xl font-extrabold text-center text-green-500 leading-9">
+        <h2 class="mt-6 text-3xl font-extrabold text-center text-gray-900 leading-9">
             Connectez-vous
         </h2>
         @if (Route::has('register'))
@@ -67,7 +67,7 @@
 
                 <div class="mt-6">
                     <span class="block w-full shadow-sm">
-                        <button type="submit" class="flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-first border border-transparent hover:bg-green-500 focus:outline-none focus:border-indigo-700 focus:ring-indigo active:bg-indigo-700 transition duration-150 ease-in-out">
+                        <button type="submit" class="flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-first border border-transparent hover:bg-green-500 focus:outline-none focus:border-green-700 focus:ring-green active:bg-green-700 transition duration-150 ease-in-out">
                             Se connecter
                         </button>
                     </span>
