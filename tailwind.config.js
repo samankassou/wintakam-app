@@ -8,6 +8,7 @@ module.exports = {
             },
             colors: {
                 first: {
+                    light: '#034994',
                     DEFAULT: '#002042'
                 }
             }
