@@ -1,3 +1,27 @@
 body {
   font-family: "Poppins", sans-serif;
 }
+
+.c-card img {
+  transition: transform 0.3s ease-in-out;
+}
+
+.c-card:hover img {
+  transform: scale(1.05);
+}
+
+header {
+  background: url("/front_office/images/home/bg-sm.jpg");
+}
+
+@media screen and (min-width: 768px) {
+  header {
+    background: url("/front_office/images/home/bg-md.jpg");
+  }
+}
+
+@media screen and (min-width: 992px) {
+  header {
+    background: url("/front_office/images/home/bg-xl.jpg");
+  }
+}

@@ -50,7 +50,7 @@ class NeighborhoodSeeder extends Seeder
                 'city_id' => $maroua->id
             ],
             [
-                'name' => 'doualaré',
+                'name' => 'Doualaré',
                 'city_id' => $maroua->id
             ],
         ]);

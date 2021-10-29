@@ -2,30 +2,6 @@
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('front_office/css/home.css') }}">
-    <style>
-        header {
-            background: url('/front_office/images/home/bg-sm.jpg');
-        }
-
-        <blade media|%20screen%20and%20(min-width%3A%20768px)%7B>header {
-            background: url('/front_office/images/home/bg-md.jpg');
-        }
-        }
-
-        <blade media|%20screen%20and%20(min-width%3A%20992px)%7B>header {
-            background: url('/front_office/images/home/bg-xl.jpg');
-        }
-        }
-
-        .c-card img {
-            transition: transform .3s ease-in-out;
-        }
-
-        .c-card:hover img {
-            transform: scale(1.05);
-        }
-
-    </style>
 @endpush
 
 @section('content')
@@ -65,8 +41,12 @@
                 <article
                     class="max-w-sm md:max-w-none c-card md:flex bg-white shadow-md hover:shadow-xl rounded-lg md:rounded-none overflow-hidden">
                     <div class="relative pb-48 md:pr-48 overflow-hidden">
-                        <img class="absolute inset-0 h-full w-full object-cover" src="https://source.unsplash.com/800x600/?house"
-                            alt="house">
+                        @if (config('app.env') == 'local')
+                            <img class="absolute inset-0 h-full w-full object-cover" src="{{ asset('front_office/images/house-2.jpg') }}" alt="house">
+                        @endif
+                        @production
+                            <img class="absolute inset-0 h-full w-full object-cover" src="https://source.unsplash.com/800x600/?house" alt="house">
+                        @endproduction
                     </div>
                     <div class="p-4 relative pb-20">
                         <h2 class="relative font-bold md:text-xl my-2 flex justify-between items-center pr-6">

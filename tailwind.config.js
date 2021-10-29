@@ -11,7 +11,8 @@ module.exports = {
                     light: '#034994',
                     DEFAULT: '#002042'
                 }
-            }
+            },
+            opacity: ['disabled']
         },
     },
     variants: {
