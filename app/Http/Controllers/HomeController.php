@@ -16,7 +16,7 @@ class HomeController extends Controller
     public function __invoke(Request $request)
     {
         $latestAds = Advert::latest()->paginate(10);
-
+        //dd(auth()->user()->getMedia());
         return view('home', [
             'adverts' => $latestAds
         ]);

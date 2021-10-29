@@ -53,6 +53,12 @@
                 <a href="#"
                     class="py-2 px-2 font-medium text-white bg-green-500 hover:bg-green-300 transition duration-300">Publier
                     une annonce</a>
+                    @auth
+                        <button class="flex relative w-8 h-8 rounded-full overflow-hidden">
+                            <img class="absolute inset-0 object-cover w-full h-full" src="{{ auth()->user()->getFirstMediaUrl('avatars') }}"
+                                alt="User avatar">
+                        </button>
+                    @endauth
             </div>
 
             <div class="md:hidden flex items-center">
