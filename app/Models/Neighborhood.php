@@ -11,6 +11,11 @@ class Neighborhood extends Model
 
     protected $guarded = [];
 
+    public function city()
+    {
+        return $this->belongsTo(City::class);
+    }
+
     public function adverts()
     {
         return $this->hasMany(Advert::class);
