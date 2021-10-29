@@ -64,12 +64,12 @@
             @forelse ($adverts as $advert)
                 <article
                     class="max-w-sm md:max-w-none c-card md:flex bg-white shadow-md hover:shadow-xl rounded-lg md:rounded-none overflow-hidden">
-                    <div class="relative pb-48 overflow-hidden md:w-full">
+                    <div class="relative pb-48 md:pr-48 overflow-hidden">
                         <img class="absolute inset-0 h-full w-full object-cover" src="https://source.unsplash.com/800x600/?house"
                             alt="house">
                     </div>
-                    <div class="p-4">
-                        <h2 class="relative font-bold md:text-xl my-2 flex justify-between items-center pr-3">
+                    <div class="p-4 relative pb-20">
+                        <h2 class="relative font-bold md:text-xl my-2 flex justify-between items-center pr-6">
                             {{ $advert->title }}
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute cursor-pointer right-1 top-1h-5 w-5 text-gray-700" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor">
@@ -138,7 +138,7 @@
                                 <span>{{ $advert->is_verified ? 'vérifié' : 'non vérifié' }}</span>
                             </p>
                         </div>
-                        <div class="bg-first text-gray-50 text-center text-sm py-2 hover:bg-green-500 transition-colors cursor-pointer">
+                        <div class="absolute bottom-2 right-4 w-2/3 mx-auto bg-first text-gray-50 text-center text-sm py-2 hover:bg-green-500 transition-colors cursor-pointer">
                             Plus de détails
                         </div>
                     </div>
