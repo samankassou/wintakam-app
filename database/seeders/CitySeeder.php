@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\City;
 use Illuminate\Database\Seeder;
 
 class CitySeeder extends Seeder
@@ -13,6 +14,11 @@ class CitySeeder extends Seeder
      */
     public function run()
     {
-        //
+        City::insert([
+            ['name' => 'Garoua'],
+            ['name' => 'Maroua'],
+            ['name' => 'Douala'],
+            ['name' => 'Yaoundé'],
+        ]);
     }
 }

@@ -22,7 +22,10 @@ class AdvertFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'title' => $this->faker->sentence,
+            'description' => $this->faker->text,
+            'price_per_month' => $this->faker->numberBetween(20000, 80000),
+            'neighborhood_id' => rand(1, 8),
         ];
     }
 }
