@@ -15,6 +15,7 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ url(mix('css/app.css')) }}">
+        <link rel="stylesheet" href="{{ asset('vendor/izitoast/css/iziToast.min.css') }}">
         @livewireStyles
 
         <!-- Scripts -->
@@ -30,6 +31,27 @@
         @yield('body')
 
         @livewireScripts
+        <script src="{{ asset('vendor/izitoast/js/iziToast.min.js') }}"></script>
+        <script>
+            Livewire.on('success', (title, message) => {
+                    iziToast.success({
+                        title: title,
+                        message: message,
+                        position: 'topRight',
+                    });
+                })
+
+        </script>
+        @if (session('alert'))
+        <script>
+            iziToast.success({
+                        title: "{{ session('alert') }}",
+                        message: "{{ session('message') }}",
+                        position: 'topRight',
+                    })
+
+        </script>
+        @endif
         @stack('scripts')
     </body>
 </html>
