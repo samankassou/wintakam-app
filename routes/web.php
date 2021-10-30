@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', HomeController::class)->name('home');
+Route::get('/', \App\Http\Livewire\Front_Office\Home::class)->name('home');
 
 Route::middleware('guest')->group(function () {
     Route::get('login', Login::class)
