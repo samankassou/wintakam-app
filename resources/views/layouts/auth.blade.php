@@ -3,16 +3,16 @@
     <link rel="stylesheet" href="{{ asset('front_office/css/home.css') }}">
     <style>
         .c {
-            background:url('/front_office/images/home/bg-sm.jpg');
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./front_office/images/home/bg-sm.jpg');
         }
         @media screen and (min-width: 768px){
             .c{
-                background:url('/front_office/images/home/bg-md.jpg');
+                background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./front_office/images/home/bg-md.jpg');
             }
         }
         @media screen and (min-width: 992px){
             .c{
-                background:url('/front_office/images/home/bg-xl.jpg');
+                background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./front_office/images/home/bg-xl.jpg');
             }
         }
 
