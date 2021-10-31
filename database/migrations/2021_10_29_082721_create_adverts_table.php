@@ -16,6 +16,7 @@ class CreateAdvertsTable extends Migration
         Schema::create('adverts', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('slug');
             $table->string('description');
             $table->tinyInteger('type')->default(1);
             $table->foreignId('host_id')->index();

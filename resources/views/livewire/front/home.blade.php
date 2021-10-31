@@ -1,10 +1,3 @@
-
-@push('styles')
-    <link rel="stylesheet" href="{{ asset('front_office/css/home.css') }}">
-@endpush
-
-@section('content')
-@include('front_office.partials.__navbar')
 <header class="bg-center bg-fixed bg-no-repeat bg-cover h-screen relative">
     <!-- Overlay Background + Center Control -->
     <div class="h-screen bg-opacity-50 bg-black flex items-center justify-center" style="background:rgba(0,0,0,0.5);">
@@ -117,9 +110,9 @@
                                 <span>{{ $advert->is_verified ? 'vérifié' : 'non vérifié' }}</span>
                             </p>
                         </div>
-                        <div class="absolute bottom-2 right-4 w-2/3 mx-auto bg-first text-gray-50 text-center text-sm py-2 hover:bg-green-500 transition-colors cursor-pointer">
+                        <a href="{{ route('adverts.show', $advert) }}" class="absolute bottom-2 right-4 w-2/3 mx-auto bg-first text-gray-50 text-center text-sm py-2 hover:bg-green-500 transition-colors cursor-pointer">
                             Plus de détails
-                        </div>
+                        </a>
                     </div>
                 </article>
             @empty
@@ -179,5 +172,3 @@
         </div>
     </section>
 </main>
-@include('front_office.partials.__footer')
-@endsection

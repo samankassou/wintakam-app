@@ -10,7 +10,6 @@ use App\Http\Livewire\Auth\Register;
 use App\Http\Livewire\Auth\Verify;
 use Illuminate\Support\Facades\Route;
 
-
 Route::middleware('guest')->group(function () {
     Route::get('login', Login::class)
         ->name('login');
