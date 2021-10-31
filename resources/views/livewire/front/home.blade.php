@@ -1,6 +1,6 @@
 <header class="bg-center bg-fixed bg-no-repeat bg-cover h-screen relative">
     <!-- Overlay Background + Center Control -->
-    <div class="h-screen bg-opacity-50 bg-black flex items-center justify-center" style="background:rgba(0,0,0,0.5);">
+    <div class="h-screen flex items-center justify-center">
         <div class="mx-2 text-center">
             <h1 class="text-gray-100 font-extrabold text-4xl xs:text-5xl md:text-6xl">
                 Sur <span class="text-green-500">Wintakam</span>,
