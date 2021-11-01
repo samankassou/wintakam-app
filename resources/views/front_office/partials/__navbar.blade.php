@@ -74,16 +74,16 @@
     <!-- mobile menu -->
     <div class="mobile-menu" x-show="showMenu" x-transition>
         <ul class="">
-            <li class="active"><a href="#"
+            <li class="active"><a href="/"
                     class="block text-sm px-2 py-4 text-white bg-green-500 font-semibold">Accueil</a></li>
             <li><a href="#" class="block text-sm px-2 py-4 text-white hover:bg-green-500 transition duration-300">Les
                     annonces</a></li>
             <li><a href="#"
                     class="block text-sm px-2 py-4 text-white hover:bg-green-500 transition duration-300">S'inscrire</a>
             </li>
-            <li><a href="#" class="block text-sm px-2 py-4 text-white hover:bg-green-500 transition duration-300">Se
+            <li><a href="{{ route('login') }}" class="block text-sm px-2 py-4 text-white hover:bg-green-500 transition duration-300">Se
                     connecter</a></li>
-            <li><a href="#"
+            <li><a href="{{ route('register') }}"
                     class="block text-sm px-2 py-4 text-white hover:bg-green-500 transition duration-300">Aide</a></li>
             <li>
                 <a href="#"
