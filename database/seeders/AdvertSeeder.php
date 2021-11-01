@@ -15,7 +15,7 @@ class AdvertSeeder extends Seeder
      */
     public function run()
     {
-        Advert::factory()->count(10)
+        Advert::factory()->count(15)
         ->create([
             'host_id' => 1
         ]);

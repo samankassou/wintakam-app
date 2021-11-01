@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Advert;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -15,11 +16,10 @@ class CreateAdvertsTable extends Migration
     {
         Schema::create('adverts', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('slug');
             $table->string('description');
-            $table->tinyInteger('type')->default(1);
+            $table->tinyInteger('type')->default(Advert::TYPE_RENT);
             $table->foreignId('host_id')->index();
+            $table->foreignId('category_id')->index();
             $table->boolean('hidden')->default(false);
             $table->integer('price_per_month')->nullable();
             $table->integer('price_per_year')->nullable();

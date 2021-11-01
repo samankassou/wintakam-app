@@ -22,13 +22,11 @@ class AdvertFactory extends Factory
      */
     public function definition()
     {
-        $title = $this->faker->sentence;
         return [
-            'title' => $title,
-            'slug' => Str::slug($title),
             'description' => $this->faker->text,
             'price_per_month' => $this->faker->numberBetween(20000, 80000),
             'neighborhood_id' => rand(1, 8),
+            'category_id' => rand(1, 7),
         ];
     }
 }

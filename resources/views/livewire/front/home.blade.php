@@ -46,7 +46,7 @@
                     </div>
                     <div class="p-4 relative pb-20">
                         <h2 class="relative font-bold md:text-xl my-2 flex justify-between items-center pr-6">
-                            {{ $advert->title }}
+                            {{ $advert->category->name }}
                             <svg xmlns="http://www.w3.org/2000/svg"
                                 class="absolute cursor-pointer right-1 top-1h-5 w-5 text-gray-700" fill="none"
                                 viewBox="0 0 24 24" stroke="currentColor">
