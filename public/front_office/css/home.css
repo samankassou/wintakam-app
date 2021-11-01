@@ -11,17 +11,17 @@ body {
 }
 
 header {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./front_office/images/home/bg-sm.jpg");
+  background: url("/front_office/images/home/bg-sm.jpg");
 }
 
 @media screen and (min-width: 768px) {
   header {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./front_office/images/home/bg-md.jpg");
+    background: url("/front_office/images/home/bg-md.jpg");
   }
 }
 
 @media screen and (min-width: 992px) {
   header {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./front_office/images/home/bg-xl.jpg");
+    background: url("/front_office/images/home/bg-xl.jpg");
   }
 }
