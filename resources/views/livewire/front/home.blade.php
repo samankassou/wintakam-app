@@ -33,7 +33,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-3 justify-items-center">
                 @forelse ($adverts as $advert)
                 <article
-                    class="max-w-sm md:max-w-none c-card md:flex bg-white shadow-md hover:shadow-xl rounded-lg md:rounded-none overflow-hidden">
+                    class="max-w-sm md:max-w-lg w-full c-card md:flex bg-white shadow-md hover:shadow-xl rounded-lg md:rounded-none overflow-hidden">
                     <div class="relative pb-48 md:pr-48 overflow-hidden">
                         @if (config('app.env') == 'local')
                         <img class="absolute inset-0 h-full w-full object-cover"
@@ -44,7 +44,7 @@
                             src="https://source.unsplash.com/800x600/?house" alt="house">
                         @endproduction
                     </div>
-                    <div class="p-4 relative pb-20">
+                    <div class="p-4 relative pb-20 w-full">
                         <h2 class="relative font-bold md:text-xl my-2 flex justify-between items-center pr-6">
                             {{ $advert->category->name }}
                             <svg xmlns="http://www.w3.org/2000/svg"
@@ -116,7 +116,7 @@
                             </p>
                         </div>
                         <a href="{{ route('adverts.show', $advert) }}"
-                            class="absolute bottom-2 right-4 w-2/3 mx-auto bg-first text-gray-50 text-center text-sm py-2 hover:bg-green-500 transition-colors cursor-pointer">
+                            class="mx-auto bg-first text-gray-50 text-center text-sm py-2 hover:bg-green-500 transition-colors cursor-pointer absolute bottom-2 left-1/2 transform -translate-x-1/2 md:right-4 w-2/3">
                             Plus de détails
                         </a>
                     </div>
