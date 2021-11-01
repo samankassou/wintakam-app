@@ -17,6 +17,8 @@ class Advert extends Model
 
     protected $guarded = [];
 
+    protected $with = ['category', 'reviews', 'neighborhood.city'];
+
     public function host()
     {
         return $this->belongsTo(User::class, 'host_id');
@@ -30,5 +32,17 @@ class Advert extends Model
     public function category()
     {
         return $this->belongsTo(Category::class);
+    }
+
+    public function reviews()
+    {
+        return $this->belongsToMany(User::class, 'reviews', 'advert_id', 'user_id')
+        ->withPivot('rating', 'comment')
+        ->withTimestamps();
+    }
+
+    public function ratingsAvg()
+    {
+        return $this->reviews->avg('pivot.rating');
     }
 }

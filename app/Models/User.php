@@ -48,4 +48,11 @@ class User extends Authenticatable implements HasMedia
     {
         return $this->hasMany(Advert::class);
     }
+
+    public function reviews()
+    {
+        return $this->belongsToMany(Advert::class, 'reviews', 'user_id', 'advert_id')
+        ->withPivot('rating', 'comment')
+        ->withTimestamps();
+    }
 }

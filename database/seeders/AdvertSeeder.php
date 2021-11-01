@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\Advert;
-use App\Models\Neighborhood;
 use Illuminate\Database\Seeder;
 
 class AdvertSeeder extends Seeder
@@ -18,6 +17,10 @@ class AdvertSeeder extends Seeder
         Advert::factory()->count(15)
         ->create([
             'host_id' => 1
-        ]);
+        ])->each(function($advert){
+            $advert->reviews()->attach(1, [
+                'rating' => rand(1, 5)
+            ]);
+        });
     }
 }
