@@ -34,7 +34,7 @@ class Register extends Component
             'name' => ['required'],
             'email' => ['required', 'email', 'unique:users'],
             'password' => ['required', 'min:8', 'same:passwordConfirmation'],
-            'picture' => ['image', 'mimes:jpg,jpeg,png', 'max:4096'],
+            'picture' => ['nullable', 'image', 'mimes:jpg,jpeg,png', 'max:4096'],
         ]);
 
         $user = User::create([

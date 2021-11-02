@@ -3,14 +3,14 @@
 <div>
     <div class="sm:mx-auto sm:w-full sm:max-w-md">
         <a href="{{ route('home') }}">
-            <x-logo class="w-auto h-16 mx-auto text-green-500" />
+            <img class="h-20 mx-auto" src="{{ asset('front_office/images/logo-xl.png') }}" alt="Wintakam logo">
         </a>
 
-        <h2 class="mt-6 text-3xl font-extrabold text-center text-gray-900 leading-9">
+        <h2 class="mt-0 text-3xl font-extrabold text-center text-gray-300 leading-9">
             Connectez-vous
         </h2>
         @if (Route::has('register'))
-            <p class="mt-2 text-sm text-center text-gray-600 leading-5 max-w">
+            <p class="mt-2 text-sm text-center text-gray-400 leading-5 max-w">
                 Ou
                 <a href="{{ route('register') }}" class="font-medium text-green-300 hover:text-green-500 focus:outline-none focus:underline transition ease-in-out duration-150">
                     Créer un nouveau compte

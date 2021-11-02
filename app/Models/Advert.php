@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Advert extends Model
 {
@@ -44,5 +45,10 @@ class Advert extends Model
     public function ratingsAvg()
     {
         return $this->reviews->avg('pivot.rating');
+    }
+
+    public function getShortDescription()
+    {
+        return Str::substr($this->description, 0, 50);
     }
 }

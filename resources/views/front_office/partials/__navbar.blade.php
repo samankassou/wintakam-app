@@ -18,7 +18,7 @@
             </div>
             <div>
                 <!-- Website Logo -->
-                <a href="#" class="flex items-center py-4 px-2">
+                <a href="/" class="flex items-center py-4 px-2">
                     <img src="{{ asset('front_office/images/logo-1.png') }}" alt="Logo"
                         class="h-10 mr-2">
                     <span class="font-semibold text-gray-100 text-lg sr-only">Navigation</span>
@@ -38,52 +38,52 @@
                             class="py-4 px-2 text-gray-100 border-transparent hover:text-green-400 border-b-4 hover:border-green-500 transition duration-300">Se
                             connecter</a>
                     @endguest
-                    @auth
-                        <a href="{{ route('logout') }}"
-                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
-                            class="py-4 px-2 text-gray-100 border-transparent hover:text-green-400 border-b-4 hover:border-green-500 transition duration-300">Se
-                            déconnecter</a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                            style="display: none;">
-                            @csrf
-                        </form>
-                    @endauth
                 </div>
 
                 <a href="#"
                     class="py-2 px-2 font-medium text-white bg-green-500 hover:bg-green-300 transition duration-300">Publier
                     une annonce</a>
-                    @auth
-                        <button class="flex relative w-8 h-8 rounded-full overflow-hidden">
-                            <img class="absolute inset-0 object-cover w-full h-full" src="{{ auth()->user()->getFirstMediaUrl('avatars') }}"
-                                alt="User avatar">
-                        </button>
-                    @endauth
             </div>
 
-            <div class="md:hidden flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-100 hover:text-white" fill="none"
-                    viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                </svg>
+            <div class="relative flex items-center" x-data="{showDropdown: false}">
+                @auth
+                <button @click="showDropdown = !showDropdown" class="flex relative w-8 h-8 rounded-full overflow-hidden">
+                    @if (auth()->user()->getFirstMediaUrl('avatars'))
+                        <img class="absolute inset-0 object-cover w-full h-full" src="{{ auth()->user()->getFirstMediaUrl('avatars') }}"
+                            alt="User avatar">
+                    @else
+                        <img class="absolute inset-0 object-cover w-full h-full" src="{{ asset('front_office/images/avatar-placeholder.png') }}"
+                            alt="User avatar">
+                    @endif
+                </button>
+                @endauth
+                <div x-show="showDropdown" x-transition class="absolute -bottom-1 left-0 bg-gray-100 w-52">
+                    @auth
+                    <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                        class="py-4 px-2 text-gray-100 border-transparent hover:text-green-400 border-b-4 hover:border-green-500 transition duration-300">Se
+                        déconnecter</a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                    @endauth
+                </div>
             </div>
 
         </div>
     </div>
     <!-- mobile menu -->
     <div class="mobile-menu" x-show="showMenu" x-transition>
-        <ul class="">
+        <ul>
             <li class="active"><a href="/"
                     class="block text-sm px-2 py-4 text-white bg-green-500 font-semibold">Accueil</a></li>
             <li><a href="#" class="block text-sm px-2 py-4 text-white hover:bg-green-500 transition duration-300">Les
                     annonces</a></li>
-            <li><a href="#"
+            <li><a href="{{ route('register') }}"
                     class="block text-sm px-2 py-4 text-white hover:bg-green-500 transition duration-300">S'inscrire</a>
             </li>
             <li><a href="{{ route('login') }}" class="block text-sm px-2 py-4 text-white hover:bg-green-500 transition duration-300">Se
                     connecter</a></li>
-            <li><a href="{{ route('register') }}"
+            <li><a href="#"
                     class="block text-sm px-2 py-4 text-white hover:bg-green-500 transition duration-300">Aide</a></li>
             <li>
                 <a href="#"

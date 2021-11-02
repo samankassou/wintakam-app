@@ -24,7 +24,9 @@ class AdvertFactory extends Factory
     {
         return [
             'description' => $this->faker->text,
-            'price_per_month' => $this->faker->numberBetween(20000, 80000),
+            'price_per_month' => $this->faker->randomElement([
+                20000, 25000, 30000, 35000, 40000, 45000, 50000, 55000, 60000
+            ]),
             'neighborhood_id' => rand(1, 8),
             'category_id' => rand(1, 7),
         ];

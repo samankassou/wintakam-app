@@ -44,7 +44,7 @@
                             src="https://source.unsplash.com/800x600/?house" alt="house">
                         @endproduction
                     </div>
-                    <div class="p-4 relative pb-20 w-full">
+                    <div class="p-4 relative pb-16 w-full">
                         <h2 class="relative font-bold md:text-xl my-2 flex justify-between items-center pr-6">
                             {{ $advert->category->name }}
                             <svg xmlns="http://www.w3.org/2000/svg"
@@ -77,12 +77,12 @@
 
                         </div>
                         <p class="text-gray-700 text-xs mt-3">
-                            {{ substr($advert->description, 40).'..' }}
+                            {{ $advert->getShortDescription().'...' }}
                         </p>
                         <p class="mt-2 font-bold text-xl mb-3">
                             {{ $advert->price_per_month }} <span class="text-sm font-semibold">FCFA/mois</span>
                         </p>
-                        <div class="py-4 border-t border-b text-xs text-gray-700">
+                        <div class="py-2 border-t border-b text-xs text-gray-700">
                             <p class="flex items-center gap-1 mb-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
                                     stroke="currentColor">
