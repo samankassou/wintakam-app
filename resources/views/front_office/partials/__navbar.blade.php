@@ -57,7 +57,7 @@
                     @endif
                 </button>
                 @endauth
-                <div x-show="showDropdown" x-transition @click.away="showDropdown = false" class="absolute right-0 -bottom-20 rounded-md bg-gray-100 shadow-md w-32 p-3">
+                <div x-show="showDropdown" x-transition @click.away="showDropdown = false" class="absolute right-0 -bottom-20 rounded-md bg-gray-100 shadow-md w-36 p-3">
                     @auth
                     <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
                         class="py-2 text-gray-700 text-sm block hover:text-green-700 transition-colors">Se

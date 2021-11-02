@@ -7,15 +7,21 @@ use Livewire\Component;
 
 class Home extends Component
 {
+    public $advertsCount = 10;
+
     public function render()
     {
-        $this->emit("success", __("Success:"), __("Courier updated!"));
-        $latestAds = Advert::latest()->paginate(10);
+        $latestAds = Advert::latest()->paginate($this->advertsCount);
 
         return view('livewire.front.home', [
             'adverts' => $latestAds
         ])
         ->extends('layouts.front')
         ->section('main');
+    }
+
+    public function loadMore()
+    {
+        $this->advertsCount += 5;
     }
 }

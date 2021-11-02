@@ -120,9 +120,9 @@
                 <p class="text-center text-gray-700 text-xl">Aucune annonce publiée</p>
                 @endforelse
             </div>
-            <a href="#"
+            <button wire:click="loadMore"
                 class="block shadow-md mt-3 sm:mt-5 md:mt-8 w-40 mx-auto text-sm text-center hover:text-green-500 border-green-500 border hover:bg-gray-50 transition-colors text-gray-50 bg-green-500 py-2 px-3 font-semibold">Voir
-                Plus...</a>
+                Plus...</button>
         </section>
         <section class="max-w-6xl mx-auto px-4 mt-5">
             <h2 class="py-5 sm:py-6 md:py-7 lg:py-8 text-center font-bold text-2xl xs:text-3xl md:text-4xl text-green-500">
