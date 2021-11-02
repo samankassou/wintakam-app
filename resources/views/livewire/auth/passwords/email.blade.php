@@ -3,10 +3,10 @@
 <div>
     <div class="sm:mx-auto sm:w-full sm:max-w-md">
         <a href="{{ route('home') }}">
-            <x-logo class="w-auto h-16 mx-auto text-green-600" />
+            <img class="h-20 mx-auto" src="{{ asset('front_office/images/logo-xl.png') }}" alt="Wintakam logo">
         </a>
 
-        <h2 class="mt-6 text-3xl font-extrabold text-center text-gray-900 leading-9">
+        <h2 class="mt-0 text-3xl font-extrabold text-center text-gray-900 leading-9">
             Réinitialiser le mot de passe
         </h2>
     </div>

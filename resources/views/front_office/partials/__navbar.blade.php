@@ -45,7 +45,7 @@
                     une annonce</a>
             </div>
 
-            <div class="relative flex items-center" x-data="{showDropdown: false}">
+            <div class="relative flex justify-center flex-col" x-data="{showDropdown: false}">
                 @auth
                 <button @click="showDropdown = !showDropdown" class="flex relative w-8 h-8 rounded-full overflow-hidden">
                     @if (auth()->user()->getFirstMediaUrl('avatars'))
@@ -57,11 +57,12 @@
                     @endif
                 </button>
                 @endauth
-                <div x-show="showDropdown" x-transition class="absolute -bottom-1 left-0 bg-gray-100 w-52">
+                <div x-show="showDropdown" x-transition @click.away="showDropdown = false" class="absolute right-0 -bottom-20 rounded-md bg-gray-100 shadow-md w-32 p-3">
                     @auth
                     <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
-                        class="py-4 px-2 text-gray-100 border-transparent hover:text-green-400 border-b-4 hover:border-green-500 transition duration-300">Se
+                        class="py-2 text-gray-700 text-sm block hover:text-green-700 transition-colors">Se
                         déconnecter</a>
+                    <a href="#" class="py-2 text-gray-700 text-sm block hover:text-green-700 transition-colors">Mon profil</a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         @csrf
                     </form>
