@@ -121,6 +121,11 @@
                 <p class="text-center text-gray-700 text-xl">Aucune annonce publiée</p>
                 @endforelse
             </div>
+            <div class="flex justify-center items-center mt-4" wire:loading.flex wire:target="loadMore">
+                <div class="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-green-500">
+
+                </div>
+            </div>
             <button wire:click="loadMore"
                 class="block shadow-md mt-3 sm:mt-5 md:mt-8 w-40 mx-auto text-sm text-center hover:text-green-500 border-green-500 border hover:bg-gray-50 transition-colors text-gray-50 bg-green-500 py-2 px-3 font-semibold">Voir
                 Plus...</button>

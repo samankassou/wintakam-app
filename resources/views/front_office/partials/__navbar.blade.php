@@ -27,15 +27,15 @@
             <div class="hidden md:flex items-center space-x-3 ">
                 <div class="hidden md:flex items-center space-x-1">
                     <a href="{{ route('home') }}"
-                        class="py-4 px-2 text-gray-100 border-transparent hover:text-green-400 hover:border-green-500 transition duration-300 @if(request()->routeIs('home')) text-green-400 border-b-4 border-green-500 font-semibold @endif">Accueil</a>
+                        class="py-4 px-2 text-gray-100 border-transparent hover:text-green-400 border-b-4 hover:border-green-500 transition duration-300 @if(request()->routeIs('home')) text-green-400 border-green-500 font-semibold @endif">Accueil</a>
                     <a href="{{ route('adverts.index') }}"
-                        class="py-4 px-2 text-gray-100 border-transparent hover:text-green-400 border-b-4 hover:border-green-500 transition duration-300 @if(request()->routeIs('adverts.index')) text-green-400 border-b-4 border-green-500 font-semibold @endif">Les
+                        class="py-4 px-2 text-gray-100 border-transparent hover:text-green-400 border-b-4 hover:border-green-500 transition duration-300 @if(request()->routeIs('adverts.index')) text-green-400 border-green-500 font-semibold @endif">Les
                         annonces</a>
                     @guest
                         <a href="{{ route('register') }}"
-                            class="py-4 px-2 text-gray-100 border-transparent hover:text-green-400 border-b-4 hover:border-green-500 transition duration-300 @if(request()->routeIs('register')) text-green-400 border-b-4 border-green-500 font-semibold @endif">S'inscrire</a>
+                            class="py-4 px-2 text-gray-100 border-transparent hover:text-green-400 border-b-4 hover:border-green-500 transition duration-300 @if(request()->routeIs('register')) text-green-400 border-green-500 font-semibold @endif">S'inscrire</a>
                         <a href="{{ route('login') }}"
-                            class="py-4 px-2 text-gray-100 border-transparent hover:text-green-400 border-b-4 hover:border-green-500 transition duration-300 @if(request()->routeIs('login')) text-green-400 border-b-4 border-green-500 font-semibold @endif">Se
+                            class="py-4 px-2 text-gray-100 border-transparent hover:text-green-400 border-b-4 hover:border-green-500 transition duration-300 @if(request()->routeIs('login')) text-green-400 border-green-500 font-semibold @endif">Se
                             connecter</a>
                     @endguest
                 </div>
