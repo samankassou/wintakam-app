@@ -2,16 +2,13 @@
 
 namespace App\Http\Livewire\Front\Adverts;
 
-use App\Models\Advert;
 use Livewire\Component;
 
-class Show extends Component
+class Index extends Component
 {
-    public Advert $advert;
-
     public function render()
     {
-        return view('livewire.front.adverts.show')
+        return view('livewire.front.adverts.index')
         ->extends('layouts.front')
         ->section('main');
     }

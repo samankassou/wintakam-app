@@ -10,7 +10,7 @@
                 <h2 class="text-gray-200 font-extrabold text-3xl xs:text-4xl md:text-5xl leading-tight">
                     trouvez assez <span class="text-white">facilement</span> un logement
                 </h2>
-                <div class="inline-flex sm:w-5/6 md:w-4/6 mt-4 sm:mt-6 md:mt-8 relative">
+                <form action="{{ route('adverts.index') }}" class="inline-flex sm:w-5/6 md:w-4/6 mt-4 sm:mt-6 md:mt-8 relative">
                     <span class="w-auto flex justify-end items-center absolute left-0 top-1">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-gray-500 p-2" fill="none"
                             viewBox="0 0 24 24" stroke="currentColor">
@@ -18,11 +18,11 @@
                                 d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                         </svg>
                     </span>
-                    <input class="w-full py-2 pl-8" type="search" placeholder="Entrez le nom d'une ville">
+                    <input class="w-full py-2 pl-8" name="city" type="search" placeholder="Entrez le nom d'une ville">
                     <button class="bg-first hover:bg-green-500 text-white py-2 pl-4 pr-4">
                         <p class="font-semibold text-xs md:text-sm">RECHERCHER</p>
                     </button>
-                </div>
+                </form>
             </div>
         </div>
     </header>
