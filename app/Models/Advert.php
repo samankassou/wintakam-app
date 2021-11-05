@@ -42,6 +42,11 @@ class Advert extends Model
         ->withTimestamps();
     }
 
+    public function getReviewsCount()
+    {
+        return $this->reviews()->count();
+    }
+
     public function ratingsAvg()
     {
         return $this->reviews->avg('pivot.rating');

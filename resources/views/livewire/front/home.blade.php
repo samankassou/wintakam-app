@@ -37,11 +37,11 @@
                     <div class="relative pb-48 md:pr-48 overflow-hidden">
                         @if (config('app.env') == 'local')
                         <img class="absolute inset-0 h-full w-full object-cover"
-                            src="{{ asset('front_office/images/house-2.jpg') }}" alt="house">
+                            src="{{ asset('front_office/images/house-2.jpg') }}" alt="house" loading="lazy">
                         @endif
                         @production
                         <img class="absolute inset-0 h-full w-full object-cover"
-                            src="https://source.unsplash.com/800x600/?house" alt="house">
+                            src="https://source.unsplash.com/800x600/?house" alt="house" loading="lazy">
                         @endproduction
                     </div>
                     <div class="p-4 relative pb-16 w-full">
@@ -54,7 +54,7 @@
                                     d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
                             </svg>
                         </h2>
-                        <div class="flex mb-2">
+                        <div class="flex items-center mb-2">
 
                             @php
                                 $rating = $advert->ratingsAvg();
@@ -74,6 +74,7 @@
                                 </svg>
                                 @endif
                             @endfor
+                            <span class="text-sm text-gray-500"> ({{ $advert->getReviewsCount() }} avis)</span>
 
                         </div>
                         <p class="text-gray-700 text-xs mt-3">
