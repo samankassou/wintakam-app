@@ -1,8 +1,8 @@
-<nav class="bg-first shadow-md fixed top-0 left-0 z-20 w-full" x-data="{showMenu: false}">
-    <div class="max-w-6xl mx-auto px-4">
+<nav class="fixed top-0 left-0 z-20 w-full shadow-md bg-first" x-data="{showMenu: false}">
+    <div class="max-w-6xl px-4 mx-auto">
         <div class="flex justify-between">
             <!-- Mobile menu button -->
-            <div class="md:hidden flex items-center">
+            <div class="flex items-center md:hidden">
                 <button class="outline-none mobile-menu-button" @click="showMenu = !showMenu">
                     <svg class="w-6 h-6 text-gray-100 hover:text-white" x-show="!showMenu" fill="none"
                         stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
@@ -18,16 +18,21 @@
             </div>
             <div>
                 <!-- Website Logo -->
-                <a href="/" class="flex items-center py-4 px-2">
+                <a href="/" class="flex items-center px-2 py-4">
                     <img src="{{ asset('front_office/images/logo-1.png') }}" alt="Logo"
                         class="h-10 mr-2">
-                    <span class="font-semibold text-gray-100 text-lg sr-only">Navigation</span>
+                    <span class="text-lg font-semibold text-gray-100 sr-only">Navigation</span>
                 </a>
             </div>
-            <div class="hidden md:flex items-center space-x-3 ">
-                <div class="hidden md:flex items-center space-x-1">
+            <div class="items-center hidden space-x-3 md:flex ">
+                <div class="items-center hidden space-x-1 md:flex">
                     <a href="{{ route('home') }}"
                         class="py-4 px-2 text-gray-100 border-transparent hover:text-green-400 border-b-4 hover:border-green-500 transition duration-300 @if(request()->routeIs('home')) text-green-400 border-green-500 font-semibold @endif">Accueil</a>
+                    @auth
+                        <a href="#"
+                            class="py-4 px-2 text-gray-100 border-transparent hover:text-green-400 border-b-4 hover:border-green-500 transition duration-300 @if(request()->routeIs('adverts.index')) text-green-400 border-green-500 font-semibold @endif">Favoris({{
+                            auth()->user()->getBookmarksCount() }})</a>
+                    @endauth
                     <a href="{{ route('adverts.index') }}"
                         class="py-4 px-2 text-gray-100 border-transparent hover:text-green-400 border-b-4 hover:border-green-500 transition duration-300 @if(request()->routeIs('adverts.index')) text-green-400 border-green-500 font-semibold @endif">Les
                         annonces</a>
@@ -41,13 +46,13 @@
                 </div>
 
                 <a href="#"
-                    class="py-2 px-2 font-medium text-white bg-green-500 hover:bg-green-300 transition duration-300">Publier
+                    class="px-2 py-2 font-medium text-white transition duration-300 bg-green-500 hover:bg-green-300">Publier
                     une annonce</a>
             </div>
 
-            <div class="relative flex justify-center flex-col" x-data="{showDropdown: false}">
+            <div class="relative flex flex-col justify-center" x-data="{showDropdown: false}">
                 @auth
-                <button @click="showDropdown = !showDropdown" class="flex relative w-8 h-8 rounded-full overflow-hidden">
+                <button @click="showDropdown = !showDropdown" class="relative flex w-8 h-8 overflow-hidden rounded-full">
                     @if (auth()->user()->getFirstMediaUrl('avatars'))
                         <img class="absolute inset-0 object-cover w-full h-full" src="{{ auth()->user()->getFirstMediaUrl('avatars') }}"
                             alt="User avatar">
@@ -57,12 +62,12 @@
                     @endif
                 </button>
                 @endauth
-                <div x-show="showDropdown" x-transition @click.away="showDropdown = false" class="absolute right-0 -bottom-20 rounded-md bg-gray-100 shadow-md w-36 p-3">
+                <div x-show="showDropdown" x-transition @click.away="showDropdown = false" class="absolute right-0 p-3 bg-gray-100 rounded-md shadow-md -bottom-20 w-36">
                     @auth
                     <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
-                        class="py-2 text-gray-700 text-sm block hover:text-green-700 transition-colors">Se
+                        class="block py-2 text-sm text-gray-700 transition-colors hover:text-green-700">Se
                         déconnecter</a>
-                    <a href="#" class="py-2 text-gray-700 text-sm block hover:text-green-700 transition-colors">Mon profil</a>
+                    <a href="#" class="block py-2 text-sm text-gray-700 transition-colors hover:text-green-700">Mon profil</a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         @csrf
                     </form>
@@ -88,10 +93,10 @@
                         connecter</a></li>
             @endguest
             <li><a href="#"
-                    class="block text-sm px-2 py-4 text-white hover:bg-green-500 transition duration-300">Aide</a></li>
+                    class="block px-2 py-4 text-sm text-white transition duration-300 hover:bg-green-500">Aide</a></li>
             <li>
                 <a href="#"
-                    class="block py-2 px-2 font-medium text-white hover:bg-green-300 transition duration-300">Publier
+                    class="block px-2 py-2 font-medium text-white transition duration-300 hover:bg-green-300">Publier
                     une annonce</a>
             </li>
         </ul>

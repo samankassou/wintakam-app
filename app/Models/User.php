@@ -55,4 +55,16 @@ class User extends Authenticatable implements HasMedia
         ->withPivot('rating', 'comment')
         ->withTimestamps();
     }
+
+    public function bookmarks()
+    {
+        return $this->belongsToMany(Advert::class, 'bookmarks', 'user_id', 'advert_id')
+        ->withTimestamps();
+    }
+
+    public function getBookmarksCount()
+    {
+        return $this->bookmarks()->count();
+    }
+
 }

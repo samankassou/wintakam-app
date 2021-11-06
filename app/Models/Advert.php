@@ -42,6 +42,17 @@ class Advert extends Model
         ->withTimestamps();
     }
 
+    public function bookmarks()
+    {
+        return $this->belongsToMany(User::class, 'bookmarks', 'advert_id', 'user_id')
+        ->withTimestamps();
+    }
+
+    public function getBookmarksCount()
+    {
+        return $this->bookmarks()->count();
+    }
+
     public function getReviewsCount()
     {
         return $this->reviews()->count();
