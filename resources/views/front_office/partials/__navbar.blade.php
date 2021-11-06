@@ -30,8 +30,9 @@
                         class="py-4 px-2 text-gray-100 border-transparent hover:text-green-400 border-b-4 hover:border-green-500 transition duration-300 @if(request()->routeIs('home')) text-green-400 border-green-500 font-semibold @endif">Accueil</a>
                     @auth
                         <a href="#"
-                            class="py-4 px-2 text-gray-100 border-transparent hover:text-green-400 border-b-4 hover:border-green-500 transition duration-300 @if(request()->routeIs('adverts.index')) text-green-400 border-green-500 font-semibold @endif">Favoris({{
-                            auth()->user()->getBookmarksCount() }})</a>
+                            class="py-4 px-2 text-gray-100 border-transparent hover:text-green-400 border-b-4 hover:border-green-500 transition duration-300 @if(request()->routeIs('adverts.index')) text-green-400 border-green-500 font-semibold @endif">Favoris(@livewire('front.adverts.bookmark-count'))</a>
+                        <a href="#"
+                            class="py-4 px-2 text-gray-100 border-transparent hover:text-green-400 border-b-4 hover:border-green-500 transition duration-300 @if(request()->routeIs('adverts.index')) text-green-400 border-green-500 font-semibold @endif">Mes annonces</a>
                     @endauth
                     <a href="{{ route('adverts.index') }}"
                         class="py-4 px-2 text-gray-100 border-transparent hover:text-green-400 border-b-4 hover:border-green-500 transition duration-300 @if(request()->routeIs('adverts.index')) text-green-400 border-green-500 font-semibold @endif">Les

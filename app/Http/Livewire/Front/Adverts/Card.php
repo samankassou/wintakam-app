@@ -23,7 +23,7 @@ class Card extends Component
     public function toggleBookmark()
     {
         auth()->user()->bookmarks()->toggle($this->advert->id);
-        $this->emit('bookmarkUpdated');
+        $this->emit('bookmarksUpdated');
         $this->emit("success", __("Success:"), __("Annonces favorites modifiées"));
     }
 }
