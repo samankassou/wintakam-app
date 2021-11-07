@@ -40,6 +40,20 @@
                         position: 'topRight',
                     });
                 })
+            Livewire.on('error', (title, message) => {
+                    iziToast.error({
+                        title: title,
+                        message: message,
+                        position: 'topRight',
+                    });
+                })
+            Livewire.on('info', (title, message) => {
+                    iziToast.info({
+                        title: title,
+                        message: message,
+                        position: 'topRight',
+                    });
+                })
 
         </script>
         @if (session('alert'))
