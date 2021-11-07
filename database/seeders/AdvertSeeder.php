@@ -21,7 +21,6 @@ class AdvertSeeder extends Seeder
             $advert->reviews()->attach(1, [
                 'rating' => rand(1, 5)
             ]);
-            $advert->bookmarks()->attach(1);
         });
     }
 }
