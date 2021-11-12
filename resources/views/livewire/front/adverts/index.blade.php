@@ -25,9 +25,11 @@
 
                     </div>
                 </div>
-                <button wire:click="loadMore"
-                    class="block w-40 px-3 py-2 mx-auto mt-3 text-sm font-semibold text-center transition-colors bg-green-500 border border-green-500 shadow-md sm:mt-5 md:mt-8 hover:text-green-500 hover:bg-gray-50 text-gray-50">Voir
-                    Plus...</button>
+                @if ($adverts->count())
+                    <button wire:click="loadMore"
+                        class="block w-40 px-3 py-2 mx-auto mt-3 text-sm font-semibold text-center transition-colors bg-green-500 border border-green-500 shadow-md sm:mt-5 md:mt-8 hover:text-green-500 hover:bg-gray-50 text-gray-50">Voir
+                        Plus...</button>
+                @endif
             </section>
         </div>
     </main>
