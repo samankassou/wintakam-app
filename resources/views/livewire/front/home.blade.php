@@ -52,48 +52,9 @@
             <h2 class="py-5 text-2xl font-bold text-center text-green-500 sm:py-6 md:py-7 lg:py-8 xs:text-3xl md:text-4xl">
                 Annonces publiées dans vos villes</h2>
             <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 md:gap-3 justify-items-center">
-                <article class="relative w-full max-w-sm overflow-hidden shadow-md c-card h-60 hover:shadow-lg">
-                    <img class="absolute inset-0 object-cover w-full h-full"
-                        src="{{ asset('front_office/images/buea.jpg') }}" alt="city">
-                    <p
-                        class="absolute p-2 font-semibold transform -translate-x-1/2 -translate-y-1/2 bg-gray-800 rounded top-1/2 left-1/2 text-gray-50 bg-opacity-30">
-                        Buéa</p>
-                </article>
-                <article class="relative w-full max-w-sm overflow-hidden shadow-md c-card h-60 hover:shadow-lg">
-                    <img class="absolute inset-0 object-cover w-full h-full"
-                        src="{{ asset('front_office/images/Douala.jpg') }}" alt="city">
-                    <p
-                        class="absolute p-2 font-semibold transform -translate-x-1/2 -translate-y-1/2 bg-gray-800 rounded top-1/2 left-1/2 text-gray-50 bg-opacity-30">
-                        Douala</p>
-                </article>
-                <article class="relative w-full max-w-sm overflow-hidden shadow-md c-card h-60 hover:shadow-lg">
-                    <img class="absolute inset-0 object-cover w-full h-full"
-                        src="{{ asset('front_office/images/maroua.jpg') }}" alt="city">
-                    <p
-                        class="absolute p-2 font-semibold transform -translate-x-1/2 -translate-y-1/2 bg-gray-800 rounded top-1/2 left-1/2 text-gray-50 bg-opacity-30">
-                        Maroua</p>
-                </article>
-                <article class="relative w-full max-w-sm overflow-hidden shadow-md c-card h-60 hover:shadow-lg">
-                    <img class="absolute inset-0 object-cover w-full h-full"
-                        src="{{ asset('front_office/images/Gra.jpg') }}" alt="city">
-                    <p
-                        class="absolute p-2 font-semibold transform -translate-x-1/2 -translate-y-1/2 bg-gray-800 rounded top-1/2 left-1/2 text-gray-50 bg-opacity-30">
-                        Garoua</p>
-                </article>
-                <article class="relative w-full max-w-sm overflow-hidden shadow-md c-card h-60 hover:shadow-lg">
-                    <img class="absolute inset-0 object-cover w-full h-full"
-                        src="{{ asset('front_office/images/yaounde.jpg') }}" alt="city">
-                    <p
-                        class="absolute p-2 font-semibold transform -translate-x-1/2 -translate-y-1/2 bg-gray-800 rounded top-1/2 left-1/2 text-gray-50 bg-opacity-30">
-                        Yaoundé</p>
-                </article>
-                <article class="relative w-full max-w-sm overflow-hidden shadow-md c-card h-60 hover:shadow-lg">
-                    <img class="absolute inset-0 object-cover w-full h-full"
-                        src="{{ asset('front_office/images/bafoussam.jpg') }}" alt="city">
-                    <p
-                        class="absolute p-2 font-semibold transform -translate-x-1/2 -translate-y-1/2 bg-gray-800 rounded top-1/2 left-1/2 text-gray-50 bg-opacity-30">
-                        Bafoussam</p>
-                </article>
+                @foreach ($cities as $city)
+                    @livewire('front.cities.card', ['city' => $city], key($city->id))
+                @endforeach
             </div>
         </section>
     </main>
