@@ -1,6 +1,7 @@
 <div>
     <main class="w-ful bg-gray-50">
         <div class="max-w-6xl px-4 mx-auto mt-24 md:mt-48">
+            <livewire:front.adverts.search-bar />
             <section class="max-w-6xl px-4 mx-auto">
                 <h2 class="py-5 text-xl font-semibold text-center text-green-500 sm:py-6 md:py-7 lg:py-8 xs:text-3xl md:text-4xl">
                     Les annonces
