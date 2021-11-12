@@ -17,6 +17,7 @@
         <link rel="stylesheet" href="{{ url(mix('css/app.css')) }}">
         <link rel="stylesheet" href="{{ asset('vendor/izitoast/css/iziToast.min.css') }}">
         @livewireStyles
+        @wireUiScripts
 
         <!-- Scripts -->
         <script src="{{ url(mix('js/app.js')) }}" defer></script>
