@@ -46,7 +46,7 @@
                     @endguest
                 </div>
 
-                <a href="#"
+                <a href="{{ route('adverts.create') }}"
                     class="px-2 py-2 font-medium text-white transition duration-300 bg-green-500 hover:bg-green-300">Publier
                     une annonce</a>
             </div>
@@ -96,7 +96,7 @@
             <li><a href="#"
                     class="block px-2 py-4 text-sm text-white transition duration-300 hover:bg-green-500">Aide</a></li>
             <li>
-                <a href="#"
+                <a href="{{ route('adverts.create') }}"
                     class="block px-2 py-2 font-medium text-white transition duration-300 hover:bg-green-300">Publier
                     une annonce</a>
             </li>
