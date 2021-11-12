@@ -10,7 +10,9 @@ module.exports = {
                 first: {
                     light: '#034994',
                     DEFAULT: '#002042'
-                }
+                },
+                primary: '#002042',
+                secondary: '#034994',
             },
             opacity: ['disabled']
         },

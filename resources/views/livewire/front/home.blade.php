@@ -32,7 +32,7 @@
                 Dernières annonces</h2>
             <div class="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-3 justify-items-center">
                 @forelse ($adverts as $advert)
-                @livewire('front.adverts.card', ['advert' => $advert], key($advert->id))
+                <livewire:front.adverts.card :advert='$advert' :wire:key='$advert->id' />
                 @empty
                 <p class="text-xl text-center text-gray-700">Aucune annonce publiée</p>
                 @endforelse
@@ -53,7 +53,7 @@
                 Annonces publiées dans vos villes</h2>
             <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 md:gap-3 justify-items-center">
                 @foreach ($cities as $city)
-                    @livewire('front.cities.card', ['city' => $city], key($city->id))
+                    <livewire:front.cities.card :city="$city" :wire:key="$city->id" />
                 @endforeach
             </div>
         </section>
