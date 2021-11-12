@@ -8,6 +8,8 @@ class Create extends Component
 {
     public function render()
     {
-        return view('livewire.front.adverts.create');
+        return view('livewire.front.adverts.create')
+        ->extends('layouts.front')
+        ->section('main');
     }
 }
