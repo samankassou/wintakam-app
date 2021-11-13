@@ -1,1 +1,1 @@
-<span>{{ $count }}</span>
+<span>({{ $count }})</span>

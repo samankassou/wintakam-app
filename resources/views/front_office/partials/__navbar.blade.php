@@ -4,16 +4,8 @@
             <!-- Mobile menu button -->
             <div class="flex items-center md:hidden">
                 <button class="outline-none mobile-menu-button" @click="showMenu = !showMenu">
-                    <svg class="w-6 h-6 text-gray-100 hover:text-white" x-show="!showMenu" fill="none"
-                        stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-100 hover:text-white"
-                        x-show="showMenu" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M6 18L18 6M6 6l12 12" />
-                    </svg>
+                    <x-icon name="menu" class="w-6 h-6 text-gray-100 hover:text-white" x-show="!showMenu" />
+                    <x-icon name="x" class="w-6 h-6 text-gray-100 hover:text-white" x-show="showMenu" />
                 </button>
             </div>
             <div>
@@ -30,7 +22,7 @@
                         class="py-4 px-2 text-gray-100 border-transparent hover:text-green-400 border-b-4 hover:border-green-500 transition duration-300 @if(request()->routeIs('home')) text-green-400 border-green-500 font-semibold @endif">Accueil</a>
                     @auth
                         <a href="#"
-                            class="py-4 px-2 text-gray-100 border-transparent hover:text-green-400 border-b-4 hover:border-green-500 transition duration-300 @if(request()->routeIs('adverts.index')) text-green-400 border-green-500 font-semibold @endif">Favoris(@livewire('front.adverts.bookmark-count'))</a>
+                            class="py-4 px-2 text-gray-100 border-transparent hover:text-green-400 border-b-4 hover:border-green-500 transition duration-300 @if(request()->routeIs('adverts.index')) text-green-400 border-green-500 font-semibold @endif">Favoris <livewire:front.adverts.bookmark-count /></a>
                         <a href="#"
                             class="py-4 px-2 text-gray-100 border-transparent hover:text-green-400 border-b-4 hover:border-green-500 transition duration-300 @if(request()->routeIs('adverts.index')) text-green-400 border-green-500 font-semibold @endif">Mes annonces</a>
                     @endauth
@@ -79,7 +71,7 @@
         </div>
     </div>
     <!-- mobile menu -->
-    <div class="mobile-menu" x-show="showMenu" x-transition>
+    <div class="mobile-menu" x-show="showMenu" x-cloak x-transition>
         <ul>
             <li class="active"><a href="/"
                     class="block text-sm px-2 py-4 text-white hover:bg-green-500 transition duration-300 @if(request()->routeIs('home')) bg-green-500 font-semibold @endif">Accueil</a></li>

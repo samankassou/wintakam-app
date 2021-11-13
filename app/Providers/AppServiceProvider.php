@@ -18,7 +18,7 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->app->bind(Hashids::class, function () {
 
-            return new Hashids(env('HASHIDS_SALT', 10));
+            return new Hashids(env('HASHIDS_SALT', 10), 12);
         });
     }
 
