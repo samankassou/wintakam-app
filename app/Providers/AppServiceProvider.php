@@ -20,6 +20,10 @@ class AppServiceProvider extends ServiceProvider
 
             return new Hashids(env('HASHIDS_SALT', 10), 12);
         });
+
+        if ($this->app->environment() !== 'production') {
+            $this->app->register(\Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class);
+        }
     }
 
     /**
