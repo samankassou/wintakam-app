@@ -2,9 +2,11 @@
 
 namespace App\Models;
 
+use App\Hasher;
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Support\Facades\Crypt;
 
 class Advert extends Model
 {
@@ -66,5 +68,10 @@ class Advert extends Model
     public function getShortDescription()
     {
         return Str::substr($this->description, 0, 50);
+    }
+
+    public function getCryptedId()
+    {
+        return Hasher::encode($this->id);
     }
 }

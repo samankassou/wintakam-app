@@ -7,7 +7,12 @@ use Livewire\Component;
 
 class Show extends Component
 {
-    public Advert $advert;
+    public $advert;
+
+    public function mount($id)
+    {
+        $this->advert = Advert::find($id);
+    }
 
     public function render()
     {

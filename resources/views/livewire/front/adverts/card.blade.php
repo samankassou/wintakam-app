@@ -54,7 +54,7 @@
                 <span>{{ $advert->is_verified ? 'vérifié' : 'non vérifié' }}</span>
             </p>
         </div>
-        <a href="{{ route('adverts.show', $advert) }}"
+        <a href="{{ route('adverts.show', ['id' => $advert->getCryptedId()]) }}"
             class="absolute w-2/3 py-2 mx-auto text-sm text-center transition-colors transform -translate-x-1/2 cursor-pointer bg-first text-gray-50 hover:bg-green-500 bottom-2 left-1/2 md:right-4">
             Plus de détails
         </a>
