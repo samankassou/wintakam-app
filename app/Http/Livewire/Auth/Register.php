@@ -2,11 +2,11 @@
 
 namespace App\Http\Livewire\Auth;
 
-use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Auth\Events\Registered;
+use Intervention\Image\Facades\Image;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -47,6 +47,11 @@ class Register extends Component
             $user->addMedia($this->picture->getRealPath())
             ->usingName($this->picture->getClientOriginalName())
             ->toMediaCollection('avatars');
+
+            Image::make($user->getFirstMediaPath('avatars'))
+            ->fit(200, 200)
+            ->save();
+
         }
 
 
