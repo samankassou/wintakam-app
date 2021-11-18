@@ -38,7 +38,7 @@
             {{ $advert->getShortDescription().'...' }}
         </p>
         <p class="mt-2 mb-3 text-xl font-bold">
-            {{ $advert->price_per_month }} <span class="text-sm font-semibold">FCFA/mois</span>
+            {{ $advert->price }} <span class="text-sm font-semibold">FCFA/mois</span>
         </p>
         <div class="py-2 text-xs text-gray-700 border-t border-b">
             <p class="flex items-center gap-1 mb-2">

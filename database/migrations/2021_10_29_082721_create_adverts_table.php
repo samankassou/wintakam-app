@@ -21,8 +21,7 @@ class CreateAdvertsTable extends Migration
             $table->foreignId('host_id')->index();
             $table->foreignId('category_id')->index();
             $table->boolean('hidden')->default(false);
-            $table->integer('price_per_month')->nullable();
-            $table->integer('price_per_year')->nullable();
+            $table->integer('price')->nullable();
             $table->tinyInteger('is_verified')->default(false);
             $table->tinyInteger('approval_status')->default(1);
             $table->foreignId('neighborhood_id')->index();

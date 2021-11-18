@@ -22,6 +22,7 @@ class CategorySeeder extends Seeder
             ['name' => 'Appartement'],
             ['name' => 'Studio'],
             ['name' => 'Location de vacances'],
+            ['name' => 'Cité'],
         ]);
     }
 }
