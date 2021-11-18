@@ -31,6 +31,7 @@ padding: 8px 12px;
 position: absolute;
 top: 0;
 background-color: rgba(0,0,0,0.8);
+z-index: 10;
 }
 
 /* The dots/bullets/indicators */

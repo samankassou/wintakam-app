@@ -71,7 +71,7 @@
         </div>
     </div>
     <!-- mobile menu -->
-    <div class="mobile-menu" x-show="showMenu" x-cloak x-transition>
+    <div class="z-50 mobile-menu" x-show="showMenu" x-cloak x-transition>
         <ul>
             <li><a href="/"
                     class="block text-sm px-2 py-4 text-white hover:bg-green-500 transition duration-300 @if(request()->routeIs('home')) bg-green-500 font-semibold @endif">Accueil</a></li>
