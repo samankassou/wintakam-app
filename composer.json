@@ -19,7 +19,8 @@
         "spatie/laravel-medialibrary": "9.0.0",
         "vinkla/hashids": "^9.1",
         "ext-bcmath": "*",
-        "ext-gmp": "*"
+        "ext-gmp": "*",
+        "ext-gd": "*"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.6",
