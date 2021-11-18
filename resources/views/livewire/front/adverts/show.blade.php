@@ -30,6 +30,8 @@ font-size: 12px;
 padding: 8px 12px;
 position: absolute;
 top: 0;
+background-color: rgba(0,0,0,0.8);
+z-index: 344;
 }
 
 /* The dots/bullets/indicators */
@@ -69,47 +71,41 @@ to {opacity: 1}
 @endpush
 <div>
     <main class="w-full">
-        <div class="max-w-6xl mx-auto px-4 mt-24 md:mt-48">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-8">
+        <div class="max-w-6xl px-4 mx-auto mt-24 md:mt-48">
+            <div class="grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-8">
                 <div>
                     <!-- Slideshow container -->
                     <div class="relative">
 
-                        <!-- Full-width images with number and caption text -->
-                        <div class="mySlides fade relative pb-64 md:pb-96 overflow-hidden">
+                        <!-- Full-width images with number -->
+                        <div class="relative pb-64 overflow-hidden mySlides fade md:pb-96">
                             <div class="numbertext">1/3</div>
-                            <img class="absolute inset-0 h-full w-full object-cover"
+                            <img class="absolute inset-0 object-cover w-full h-full"
                                 src="{{ asset('front_office/images/house-1.jpg') }}">
                         </div>
 
-                        <div class="mySlides fade relative pb-64 md:pb-96 overflow-hidden">
+                        <div class="relative pb-64 overflow-hidden mySlides fade md:pb-96">
                             <div class="numbertext">2/3</div>
-                            <img class="absolute inset-0 h-full w-full object-cover"
+                            <img class="absolute inset-0 object-cover w-full h-full"
                                 src="{{ asset('front_office/images/house-2.jpg') }}">
                         </div>
 
-                        <div class="mySlides fade relative pb-64 md:pb-96 overflow-hidden">
+                        <div class="relative pb-64 overflow-hidden mySlides fade md:pb-96">
                             <div class="numbertext">3/3</div>
-                            <img class="absolute inset-0 h-full w-full object-cover"
+                            <img class="absolute inset-0 object-cover w-full h-full"
                                 src="{{ asset('front_office/images/house-3.jpeg') }}">
                         </div>
 
                         <!-- Next and previous buttons -->
-                        <a class="prev cursor-pointer absolute top-1/2 w-auto p-4 text-gray-50 -mt-6 font-bold text-base"
+                        <a class="absolute w-auto p-4 -mt-6 text-base font-bold cursor-pointer prev top-1/2 text-gray-50"
                             onclick="plusSlides(-1)">&#10094;</a>
-                        <a class="next cursor-pointer absolute top-1/2 w-auto p-4 text-gray-50 -mt-6 font-bold text-base right-0"
+                        <a class="absolute right-0 w-auto p-4 -mt-6 text-base font-bold cursor-pointer next top-1/2 text-gray-50"
                             onclick="plusSlides(1)">&#10095;</a>
-                    </div>
-                    <!-- The dots/circles -->
-                    <div class="mt-3 text-center">
-                        <span class="dot" onclick="currentSlide(1)"></span>
-                        <span class="dot" onclick="currentSlide(2)"></span>
-                        <span class="dot" onclick="currentSlide(3)"></span>
                     </div>
                 </div>
                 <div>
-                    <div class="flex justify-between items-center">
-                        <h2 class="relative font-bold md:text-xl my-2 flex justify-between items-center pr-6">
+                    <div class="flex items-center justify-between">
+                        <h2 class="relative flex items-center justify-between pr-6 my-2 font-bold md:text-xl">
                             {{ $advert->category->name }}
                         </h2>
                     </div>
@@ -121,13 +117,13 @@ to {opacity: 1}
                                 $rating = $advert->ratingsAvg();
                                 @endphp
                                 @for ($i = 0; $i < 5; $i++) @if ($rating - $i>= 1)
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400 fill-current" fill="none"
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-yellow-400 fill-current" fill="none"
                                         viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                             d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
                                     </svg>
                                     @else
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400" fill="none"
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-yellow-400" fill="none"
                                         viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                             d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
@@ -138,8 +134,8 @@ to {opacity: 1}
 
                             </div>
                         </div>
-                        <a href="#" class="flex items-center underline text-gray-700 hover:text-green-500">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="text-gray-700 h-4 w-4 underline" fill="none"
+                        <a href="#" class="flex items-center text-gray-700 underline hover:text-green-500">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-gray-700 underline" fill="none"
                                 viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
@@ -148,11 +144,11 @@ to {opacity: 1}
                         </a>
                     </div>
                     <div class="mt-4">
-                        <h3 class="font-bold text-lg text-gray-700">
+                        <h3 class="text-lg font-bold text-gray-700">
                             Adresse
                         </h3>
-                        <p class="flex items-center text-gray-700 text-sm">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <p class="flex items-center text-sm text-gray-700">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -161,19 +157,19 @@ to {opacity: 1}
                         </p>
                     </div>
                     <div class="mt-4">
-                        <h3 class="font-bold text-lg text-gray-700">Description</h3>
-                        <p class="text-gray-700 text-sm">
+                        <h3 class="text-lg font-bold text-gray-700">Description</h3>
+                        <p class="text-sm text-gray-700">
                             {{ $advert->description }}
                         </p>
                     </div>
                     <div class="mt-4">
-                        <h3 class="font-bold text-lg text-gray-700">Prix</h3>
-                        <p class="mt-2 font-bold text-xl mb-3">
-                            {{ $advert->price_per_month }} <span class="text-sm font-semibold">FCFA/mois</span>
+                        <h3 class="text-lg font-bold text-gray-700">Prix</h3>
+                        <p class="mt-2 mb-3 text-xl font-bold">
+                            {{ $advert->price }} <span class="text-sm font-semibold">FCFA/mois</span>
                         </p>
                     </div>
                     <div class="mt-4">
-                        <h3 class="font-bold text-lg text-gray-700">Publiée</h3>
+                        <h3 class="text-lg font-bold text-gray-700">Publiée</h3>
                         <p>
                             {{ $advert->created_at->diffForHumans() }}
                         </p>
