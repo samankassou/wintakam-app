@@ -23,7 +23,7 @@
                     @auth
                         <a href="#"
                             class="py-4 px-2 text-gray-100 border-transparent hover:text-green-400 border-b-4 hover:border-green-500 transition duration-300 @if(request()->routeIs('adverts.index')) text-green-400 border-green-500 font-semibold @endif">Favoris <livewire:front.adverts.bookmark-count /></a>
-                        <a href="#"
+                        <a href="{{ route('adverts.me') }}"
                             class="py-4 px-2 text-gray-100 border-transparent hover:text-green-400 border-b-4 hover:border-green-500 transition duration-300 @if(request()->routeIs('adverts.index')) text-green-400 border-green-500 font-semibold @endif">Mes annonces</a>
                     @endauth
                     <a href="{{ route('adverts.index') }}"
@@ -73,10 +73,19 @@
     <!-- mobile menu -->
     <div class="mobile-menu" x-show="showMenu" x-cloak x-transition>
         <ul>
-            <li class="active"><a href="/"
+            <li><a href="/"
                     class="block text-sm px-2 py-4 text-white hover:bg-green-500 transition duration-300 @if(request()->routeIs('home')) bg-green-500 font-semibold @endif">Accueil</a></li>
             <li><a href="{{ route('adverts.index') }}" class="block text-sm px-2 py-4 text-white hover:bg-green-500 transition duration-300 @if(request()->routeIs('adverts.index')) bg-green-500 font-semibold @endif">Les
                     annonces</a></li>
+            @auth
+                <li><a href="#"
+                        class="block text-sm px-2 py-4 text-white hover:bg-green-500 transition duration-300 @if(request()->routeIs('adverts.me')) bg-green-500 font-semibold @endif">
+                        Favoris
+                        <livewire:front.adverts.bookmark-count /></a></li>
+                <li><a href="{{ route('adverts.me') }}"
+                        class="block text-sm px-2 py-4 text-white hover:bg-green-500 transition duration-300 @if(request()->routeIs('adverts.me')) bg-green-500 font-semibold @endif">Mes
+                        annonces</a></li>
+            @endauth
             @guest
                 <li><a href="{{ route('register') }}"
                         class="block text-sm px-2 py-4 text-white hover:bg-green-500 transition duration-300 @if(request()->routeIs('register')) bg-green-500 font-semibold @endif">S'inscrire</a>

@@ -28,6 +28,16 @@ class Advert extends Model implements HasMedia
         return $this->belongsTo(User::class, 'host_id');
     }
 
+    /**
+     *
+     * @param  \Illuminate\Database\Eloquent\Builder $query
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeAuthUserAdverts($query)
+    {
+        return $query->where('host_id', auth()->id());
+    }
+
     public function neighborhood()
     {
         return $this->belongsTo(Neighborhood::class);

@@ -16,6 +16,9 @@ class Hasher
         if (is_int($enc)) {
             return $enc;
         }
+
+        abort_if(!app(Hashids::class)->decode($enc), 404);
+
         return app(Hashids::class)->decode($enc)[0];
     }
 }

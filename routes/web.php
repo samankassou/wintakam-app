@@ -7,6 +7,8 @@ Route::get('/adverts/new', \App\Http\Livewire\Front\Adverts\Create::class)
 ->name('adverts.create')
 ->middleware(['auth']);
 Route::get('/adverts/{id}', \App\Http\Livewire\Front\Adverts\Show::class)->name('adverts.show');
+Route::get('/me/adverts', \App\Http\Livewire\Front\Adverts\AuthUserAdverts::class)
+->name('adverts.me');
 Route::get('/adverts', \App\Http\Livewire\Front\Adverts\Index::class)
 ->name('adverts.index');
 
