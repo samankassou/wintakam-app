@@ -45,8 +45,10 @@ class Create extends Component
 
     public function render()
     {
-        if(session('errors')){
-            dd('error');
+        if($this->getErrorBag()->count()){
+
+            // send success notification
+            $this->emit("error", 'Erreur', __("Vérifiez les informations!"));
         }
         return view('livewire.front.adverts.create')
         ->extends('layouts.front')
