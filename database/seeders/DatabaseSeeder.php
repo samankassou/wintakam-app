@@ -17,7 +17,6 @@ class DatabaseSeeder extends Seeder
             CitySeeder::class,
             NeighborhoodSeeder::class,
             CategorySeeder::class,
-            AdvertSeeder::class,
         ]);
     }
 }

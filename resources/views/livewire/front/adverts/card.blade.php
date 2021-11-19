@@ -2,7 +2,7 @@
     class="w-full max-w-sm overflow-hidden bg-white rounded-lg shadow-md md:max-w-lg c-card md:flex hover:shadow-xl md:rounded-none">
     <div class="relative pb-48 overflow-hidden md:pr-48">
         @if (config('app.env') == 'local')
-        <img class="absolute inset-0 object-cover w-full h-full" src="{{ asset('front_office/images/house-2.jpg') }}"
+        <img class="absolute inset-0 object-cover w-full h-full" src="{{ $advert->getFirstMediaUrl('images') }}"
             alt="house" loading="lazy">
         @endif
         @production

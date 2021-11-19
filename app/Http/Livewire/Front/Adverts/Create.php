@@ -2,13 +2,14 @@
 
 namespace App\Http\Livewire\Front\Adverts;
 
-use App\Models\Advert;
 use App\Models\City;
+use App\Models\Advert;
 use Livewire\Component;
 use App\Models\Category;
 use App\Models\Neighborhood;
-use Illuminate\Support\Facades\Validator;
 use Livewire\WithFileUploads;
+use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\Validator;
 
 class Create extends Component
 {
@@ -60,7 +61,6 @@ class Create extends Component
          $data = $this->validate();
         // if there are errors, send error notification
 
-        //dd($data);
         $advert = Advert::create([
             'type'            => $data['type'],
             'category_id'     => $data['category'],
@@ -74,6 +74,14 @@ class Create extends Component
         collect($this->images)->each(fn($image) =>
             $advert->addMedia($image->getRealPath())->toMediaCollection('images')
         );
+
+        // compress images
+        $advert->getMedia('images')->each(function($image){
+
+            Image::make($image->getPath())
+            ->fit(300, 300)
+            ->save();
+        });
 
         // send success notification
         $this->emit("success", '', __("Votre annonce est en cours de vérification"));
