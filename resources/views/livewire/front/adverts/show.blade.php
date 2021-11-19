@@ -78,23 +78,12 @@ to {opacity: 1}
                     <div class="relative">
 
                         <!-- Full-width images with number -->
-                        <div class="relative pb-64 overflow-hidden mySlides fade md:pb-96">
-                            <div class="numbertext">1/3</div>
-                            <img class="absolute inset-0 object-cover w-full h-full"
-                                src="{{ asset('front_office/images/house-1.jpg') }}">
-                        </div>
-
-                        <div class="relative pb-64 overflow-hidden mySlides fade md:pb-96">
-                            <div class="numbertext">2/3</div>
-                            <img class="absolute inset-0 object-cover w-full h-full"
-                                src="{{ asset('front_office/images/house-2.jpg') }}">
-                        </div>
-
-                        <div class="relative pb-64 overflow-hidden mySlides fade md:pb-96">
-                            <div class="numbertext">3/3</div>
-                            <img class="absolute inset-0 object-cover w-full h-full"
-                                src="{{ asset('front_office/images/house-3.jpeg') }}">
-                        </div>
+                        @foreach ($advert->getMedia('images') as $image)
+                            <div class="relative pb-64 overflow-hidden mySlides fade md:pb-96">
+                                <div class="numbertext">{{ $loop->iteration }}/{{ $loop->count }}</div>
+                                <img class="absolute inset-0 object-cover w-full h-full" src="{{ $image->getUrl() }}">
+                            </div>
+                        @endforeach
 
                         <!-- Next and previous buttons -->
                         <a class="absolute w-auto p-4 -mt-6 text-base font-bold cursor-pointer prev top-1/2 text-gray-50"
@@ -147,7 +136,7 @@ to {opacity: 1}
                         <h3 class="text-lg font-bold text-gray-700">
                             Adresse
                         </h3>
-                        <p class="flex items-center text-sm text-gray-700">
+                        <p class="flex items-center text-sm text-gray-400">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -158,19 +147,19 @@ to {opacity: 1}
                     </div>
                     <div class="mt-4">
                         <h3 class="text-lg font-bold text-gray-700">Description</h3>
-                        <p class="text-sm text-gray-700">
+                        <p class="text-sm text-gray-400">
                             {{ $advert->description }}
                         </p>
                     </div>
                     <div class="mt-4">
                         <h3 class="text-lg font-bold text-gray-700">Prix</h3>
-                        <p class="mt-2 mb-3 text-xl font-bold">
+                        <p class="mt-2 mb-3 text-xl font-bold text-gray-400">
                             {{ $advert->price }} <span class="text-sm font-semibold">FCFA/mois</span>
                         </p>
                     </div>
                     <div class="mt-4">
                         <h3 class="text-lg font-bold text-gray-700">Publiée</h3>
-                        <p>
+                        <p class="text-gray-400">
                             {{ $advert->created_at->diffForHumans() }}
                         </p>
                     </div>
