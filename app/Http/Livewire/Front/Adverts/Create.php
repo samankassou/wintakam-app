@@ -79,7 +79,7 @@ class Create extends Component
         $advert->getMedia('images')->each(function($image){
 
             Image::make($image->getPath())
-            ->fit(300, 300)
+            ->fit(480, 320)
             ->save();
         });
 
