@@ -33,4 +33,9 @@ class Card extends Component
         $this->emit('bookmarksUpdated');
         $this->emit("success", __("Succès"), __("Annonces favorites modifiées"));
     }
+
+    public function deleteAdvert($advertId)
+    {
+        dd($advertId);
+    }
 }

@@ -1,4 +1,4 @@
-<article
+<article x-data="{ dropdownOpen: false }"
     class="w-full max-w-sm overflow-hidden bg-white rounded-lg shadow-md md:max-w-lg c-card md:flex hover:shadow-xl md:rounded-none">
     <div class="relative pb-48 overflow-hidden md:pr-48">
         <img class="absolute inset-0 object-cover w-full h-full" src="{{ $advert->getFirstMediaUrl('images') }}"
@@ -7,12 +7,28 @@
     <div class="relative w-full p-4 pb-16">
         <h2 class="relative flex items-center justify-between pr-6 my-2 font-bold md:text-xl">
             {{ optional($advert->category)->name }}
-            @if ($isBookmarked)
-            <x-icon wire:click='toggleBookmark' name="bookmark" class="absolute w-5 text-gray-700 cursor-pointer fill-current right-1 top-1h-5" />
+            @if(request()->routeIs('adverts.me'))
+            <span @click="dropdownOpen = !dropdownOpen">
+                <x-icon name="dots-vertical" class="absolute w-5 h-5 text-gray-700 cursor-pointer right-1 top-1 hover:bg-gray-400" />
+            </span>
             @else
-            <x-icon wire:click='toggleBookmark' name="bookmark" class="absolute w-5 text-gray-700 cursor-pointer right-1 top-1h-5" />
+            @if ($isBookmarked)
+            <x-icon wire:click='toggleBookmark' name="bookmark"
+                class="absolute w-5 h-5 text-gray-700 cursor-pointer fill-current right-1 top-1" />
+            @else
+            <x-icon wire:click='toggleBookmark' name="bookmark"
+                class="absolute w-5 h-5 text-gray-700 cursor-pointer right-1 top-1" />
+            @endif
             @endif
         </h2>
+        <div x-show="dropdownOpen" x-cloak x-transition @click.away="dropdownOpen = false" class="absolute z-20 w-48 py-2 mt-1 bg-white rounded-md shadow-md right-1">
+            <a href="#" class="block px-4 py-2 text-sm text-gray-700 capitalize hover:bg-green-500 hover:text-white">
+                Modifier
+            </a>
+            <a wire:click.prevent="$emit('openModal', 'front.adverts.delete-advert', {{ json_encode(["advert" => $advert->id]) }})" href="#" class="block px-4 py-2 text-sm text-gray-700 capitalize hover:bg-green-500 hover:text-white">
+                Supprimer
+            </a>
+        </div>
         <div class="flex items-center mb-2">
 
             @php
