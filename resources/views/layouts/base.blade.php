@@ -35,10 +35,7 @@
         <!-- scroll to top component -->
         <button id="scrollTopBtn" role="button" style="z-index: 9999; bottom: 40px; right: 20px; display: none" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });"
             class="fixed p-3 bg-green-600 border border-none rounded-full shadow-xl animate-bounce hover:transform hover:scale-50 hover:shadow-2xl hover:bg-green-700">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24"
-                stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
-            </svg>
+            <x-icon name="arrow-up" class="w-6 h-6 text-white" />
         </button>
         <script src="{{ asset('vendor/izitoast/js/iziToast.min.js') }}"></script>
         <script>
@@ -84,7 +81,7 @@
             window.onscroll = function() {scrollFunction()};
 
             function scrollFunction() {
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
             scrollTopBtn.style.display = "block";
             } else {
             scrollTopBtn.style.display = "none";

@@ -5,7 +5,7 @@
             <div class="flex items-center md:hidden">
                 <button class="outline-none mobile-menu-button" @click="showMenu = !showMenu">
                     <x-icon name="menu" class="w-6 h-6 text-gray-100 hover:text-white" x-show="!showMenu" />
-                    <x-icon name="x" class="w-6 h-6 text-gray-100 hover:text-white" x-show="showMenu" />
+                    <x-icon name="x" class="w-6 h-6 text-gray-100 hover:text-white" x-cloak x-show="showMenu" />
                 </button>
             </div>
             <div>
@@ -24,7 +24,7 @@
                         <a href="#"
                             class="py-4 px-2 text-gray-100 border-transparent hover:text-green-400 border-b-4 hover:border-green-500 transition duration-300 @if(request()->routeIs('adverts.index')) text-green-400 border-green-500 font-semibold @endif">Favoris <livewire:front.adverts.bookmark-count /></a>
                         <a href="{{ route('adverts.me') }}"
-                            class="py-4 px-2 text-gray-100 border-transparent hover:text-green-400 border-b-4 hover:border-green-500 transition duration-300 @if(request()->routeIs('adverts.index')) text-green-400 border-green-500 font-semibold @endif">Mes annonces</a>
+                            class="py-4 px-2 text-gray-100 border-transparent hover:text-green-400 border-b-4 hover:border-green-500 transition duration-300 @if(request()->routeIs('adverts.me')) text-green-400 border-green-500 font-semibold @endif">Mes annonces</a>
                     @endauth
                     <a href="{{ route('adverts.index') }}"
                         class="py-4 px-2 text-gray-100 border-transparent hover:text-green-400 border-b-4 hover:border-green-500 transition duration-300 @if(request()->routeIs('adverts.index')) text-green-400 border-green-500 font-semibold @endif">Les
