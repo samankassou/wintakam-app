@@ -15,8 +15,8 @@
         </div>
     </header>
     <main class="w-full bg-gray-50">
-        <section class="max-w-6xl px-4 mx-auto">
-            <h2 class="py-5 text-2xl font-bold text-center text-green-500 sm:py-6 md:py-7 lg:py-8 xs:text-3xl md:text-4xl">
+        <section class="max-w-6xl px-4 py-4 mx-auto">
+            <h2 class="max-w-sm mb-2 text-sm font-bold text-green-500">
                 Dernières annonces</h2>
             <div class="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-3 justify-items-center">
                 @forelse ($adverts as $advert)
@@ -37,7 +37,7 @@
             @endif
         </section>
         <section class="max-w-6xl px-4 mx-auto mt-5">
-            <h2 class="py-5 text-2xl font-bold text-center text-green-500 sm:py-6 md:py-7 lg:py-8 xs:text-3xl md:text-4xl">
+            <h2 class="max-w-sm mb-2 text-sm font-bold text-green-500">
                 Annonces publiées dans vos villes</h2>
             <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 md:gap-3 justify-items-center">
                 @foreach ($cities as $city)
