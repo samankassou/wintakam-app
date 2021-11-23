@@ -10,6 +10,8 @@ class AuthUserAdverts extends Component
 
     public $advertsCount = 10;
 
+     protected $listeners = ['advertDeleted' => '$refresh'];
+
     public function render()
     {
         $latestAds = Advert::authUserAdverts()

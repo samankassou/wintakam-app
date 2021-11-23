@@ -22,6 +22,7 @@ class DeleteAdvert extends ModalComponent
     public function delete()
     {
         $this->advert->delete();
+        $this->emit("advertDeleted");
         $this->emit("success", "", "Annonce supprimée");
         $this->closeModal();
     }
