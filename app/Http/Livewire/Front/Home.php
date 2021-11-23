@@ -13,7 +13,7 @@ class Home extends Component
     public function render()
     {
         $latestAds = Advert::latest()->paginate($this->advertsCount);
-        $cities = City::all(['name']);
+        $cities = City::withCount('adverts')->get(['name', 'adverts_count']);
 
         return view('livewire.front.home', [
             'adverts' => $latestAds,

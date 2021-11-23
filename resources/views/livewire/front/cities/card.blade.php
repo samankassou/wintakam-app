@@ -3,5 +3,5 @@
         alt="city">
     <p
         class="absolute p-2 font-semibold transform -translate-x-1/2 -translate-y-1/2 bg-gray-800 rounded top-1/2 left-1/2 text-gray-50 bg-opacity-30">
-        {{ $city->name }}</p>
+        {{ $city->name }} ({{ $city->adverts_count }})</p>
 </a>
